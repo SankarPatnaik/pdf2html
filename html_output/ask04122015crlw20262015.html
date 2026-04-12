@@ -40,6 +40,12 @@
     h3 {
       font-size: 1.12rem;
     }
+    h4 {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      margin-top: 0.95em;
+    }
     p {
       margin: 0.65em 0;
       text-align: justify;
@@ -49,6 +55,22 @@
       line-height: 1.45;
       margin-top: 0.5em;
     }
+    .citation-ref a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup, sub {
+      font-size: 0.72em;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup {
+      top: -0.48em;
+    }
+    sub {
+      bottom: -0.18em;
+    }
     ol, ul {
       margin: 0.65em 0 0.95em 1.5em;
       padding: 0;
@@ -56,6 +78,13 @@
     li {
       margin: 0.28em 0;
       padding-left: 0.2em;
+    }
+    .sub-numbered-list {
+      margin-left: 3rem;
+      padding-left: 0.35rem;
+    }
+    .subparagraph-item {
+      font-style: italic;
     }
     .table-wrap {
       margin: 1.15em 0 1.45em;
@@ -86,6 +115,40 @@
       border: 1px solid var(--rule);
       background: white;
     }
+    .citations {
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      break-before: page;
+      page-break-before: always;
+    }
+    .citations h2 {
+      margin-top: 0;
+    }
+    .citation-list {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+    }
+    .citation-list li {
+      display: grid;
+      grid-template-columns: minmax(2.8rem, auto) 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      margin: 0.55rem 0;
+      padding: 0;
+    }
+    .citation-marker {
+      font-weight: 700;
+    }
+    .citation-text {
+      min-width: 0;
+    }
+    .citation-backref {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.3rem;
+    }
     @media print {
       html, body {
         background: white;
@@ -105,8 +168,21 @@
 <body>
   <main>
     <article>
-<figure class="page-facsimile" data-page="1"><img src="assets/ask04122015crlw20262015/ask04122015crlw20262015-page-0001.png" alt="Facsimile of page 1" /></figure>
-<p data-page="2">M.S.Park police station. The petitioner was noticed for his having involved himself in six cases, the details of which are as hereunder:-</p>
+<h3>* IN THE HIGH COURT OF DELHI AT NEW DELHI</h3>
+<p data-page="1">+</p>
+<h3>WP(CRL) No.2026/2015</h3>
+<p data-page="1">Date of Reserve: 01.12.2015 Date of Decision: 04.12.2015 VISHNU..... Petitioner Through: Mr.Mir Akhtar Hussain and Mr.S.Lakhi Singh, Advocates.</p>
+<h3>versus</h3>
+<p data-page="1">LT.GOVERNOR OF DELHI &amp; ORS...... Respondents Through: Ms.Kamna Vohra, ASC.</p>
+<p data-page="1">CORAM:</p>
+<h3>HON&#x27;BLE MR. JUSTICE ASHUTOSH KUMAR</h3>
+<h3>ASHUTOSH KUMAR, J.</h3>
+<h4>Crl.M.A No.13496/2015</h4>
+<p data-page="1">Exemption allowed subject to just exemptions. The Application is disposed of accordingly WP(CRL) No.2026/2015</p>
+<ol class="numbered-list" start="1">
+<li>Vishnu, the petitioner, has assailed the order dated 02.07.2015 passed by the Deputy Commissioner of Police, North East District, Delhi whereby he has been externed from the limits of NCT of Delhi for a period of one year with effect from 09.07.2015 as also the Appellate order dated 05.08.2015 whereby the externment order passed by the Deputy Commissioner of Police, North East District Delhi has been upheld.</li>
+<li>Externment proceedings were initiated against the petitioner on 04.06.2013 when a proposal was sent for the same by the SHO of M.S.Park police station. The petitioner was noticed for his having involved himself in six cases, the details of which are as hereunder:-</li>
+</ol>
 <div class="table-wrap" data-page="2"><table class="court-table"><thead><tr><th>SL. No.</th><th>FIR No.</th><th>DATED</th><th>SECTION OF LAW</th><th>POLICE STATION</th></tr></thead><tbody><tr><td>1</td><td>27</td><td>14.02.1993</td><td>61/1/14 Excise Act</td><td>M.S. PARK</td></tr><tr><td>2</td><td>105</td><td>06.05.1998</td><td>61/1/14 Excise Act</td><td>VIVEK VIHAR</td></tr><tr><td>3</td><td>138</td><td>18.04.2003</td><td>61/1/14 Excise Act</td><td>M.S. PARK</td></tr><tr><td>4</td><td>280</td><td>04.11.2011</td><td>12/9/55 Gambling Act</td><td>G.T.B. ENCLAVE</td></tr><tr><td>5</td><td>59</td><td>11.03.2013</td><td>12/9/55 Gambling Act</td><td>M.S. PARK</td></tr><tr><td>6</td><td>78</td><td>03.04.2013</td><td>33 Delhi Excise Act</td><td>M.S. PARK</td></tr></tbody></table></div>
 <ol class="numbered-list" start="3">
 <li>The petitioner appeared before the Deputy Commissioner of Police when he was made to understand the accusations against him. Despite the fact that there was no counsel accompanying him to defend his case, the petitioner was granted bail and was made to furnish his security bond. During the proceeding, he produced one defence witness namely Rakesh Kumar whose statement was recorded. On behalf of the prosecution, the SHO of M.S.Park was examined as a witness.</li>
@@ -121,10 +197,10 @@
 <li>Ms.Kamna Vohra, defending the impugned orders, has submitted that the very fact that the petitioner was found involved in a case of NDPS Act during the externment proceedings is reflective of the mindset of the petitioner and his propensity to commit crimes. It has further been submitted that the number of cases which have been filed against him demonstrate that the petitioner is a habitual offender and that his presence is dangerous for the even tempo of life in a civilized society. It has been reiterated that the petitioner has displayed a recalcitrant tendency and is not eschewing from committing criminal acts.</li>
 <li>In order to appreciate the contention of the parties and to test the correctness of the orders impugned it would be apposite to refer to the relevant provisions of Delhi Police Act, 1978. “Section 47 - Removal of persons about to commit offences Whenever it appears to the Commissioner of Police--</li>
 </ol>
-<ol class="numbered-list" type="a" start="1">
-<li>that the movements or acts of any person are causing or are calculated to cause alarm, danger or harm to person or property; or</li>
-<li>that there are reasonable grounds for believing that such person is engaged or is about to be engaged in the commission of an offence involving force or violence or an offence punishable under Chapter XII, Chapter XVI, Chapter XVII or Chapter XXII of the Indian Penal Code (45 of 1860) or under section 290 or sections 489A to 489E (both inclusive) of that Code or in the abetment of any such offence; or</li>
-<li>that such person-i) is so desperate and dangerous as to render his being at large in Delhi or in any part thereof hazardous to the community; or ii) has been found habitually intimidating other persons by acts of violence or by show of force; or iii) habitually commits affray or breach of peace or riot, or habitually makes forcible collection of subscription or threatens people for illegal pecuniary gain for himself or for others; or iv) has been habitually passing indecent remarks on women and girls, or teasing them by overtures, and that in the opinion of the Commissioner of Police witnesses are not willing to come forward to give evidence in public against such person by reason of apprehension on their part as regards the safety of their person or property, the Commissioner of Police may, by order in writing duly served on such person, or by beat of drum or otherwise as he thinks fit, direct such person to so conduct himself as shall seem necessary in order to prevent violence and alarm or to remove himself outside Delhi or any part thereof, by such route and within such time as the Commissioner of Police may specify and not to enter or return to Delhi or part thereof, as the case may be, from which he was directed to remove himself.</li>
+<ol class="numbered-list sub-numbered-list" type="a" start="1">
+<li class="subparagraph-item"><em>that the movements or acts of any person are causing or are calculated to cause alarm, danger or harm to person or property; or</em></li>
+<li class="subparagraph-item"><em>that there are reasonable grounds for believing that such person is engaged or is about to be engaged in the commission of an offence involving force or violence or an offence punishable under Chapter XII, Chapter XVI, Chapter XVII or Chapter XXII of the Indian Penal Code (45 of 1860) or under section 290 or sections 489A to 489E (both inclusive) of that Code or in the abetment of any such offence; or</em></li>
+<li class="subparagraph-item"><em>that such person-i) is so desperate and dangerous as to render his being at large in Delhi or in any part thereof hazardous to the community; or ii) has been found habitually intimidating other persons by acts of violence or by show of force; or iii) habitually commits affray or breach of peace or riot, or habitually makes forcible collection of subscription or threatens people for illegal pecuniary gain for himself or for others; or iv) has been habitually passing indecent remarks on women and girls, or teasing them by overtures, and that in the opinion of the Commissioner of Police witnesses are not willing to come forward to give evidence in public against such person by reason of apprehension on their part as regards the safety of their person or property, the Commissioner of Police may, by order in writing duly served on such person, or by beat of drum or otherwise as he thinks fit, direct such person to so conduct himself as shall seem necessary in order to prevent violence and alarm or to remove himself outside Delhi or any part thereof, by such route and within such time as the Commissioner of Police may specify and not to enter or return to Delhi or part thereof, as the case may be, from which he was directed to remove himself.</em></li>
 </ol>
 <p data-page="6">Explanation.--A person who during a period within one year immediately preceding the commencement of an action under this section has been found on not less than three occasions to have committed or to have been involved in any of the acts referred to in this section shall be deemed to have habitually committed that act.</p>
 <p data-page="6">Section 50 - Hearing to be given before order under section 46, 47 or 48 is passed</p>
@@ -135,24 +211,24 @@
 <li>Such person shall be entitled to be represented in the proceeding before the Commissioner of Police by a counsel.</li>
 <li>(a) The Commissioner of Police may for the purpose of securing the attendance of any person against whom any order is proposed to be made under section 46, section 47 or section 48 require such person, by order in writing, to appear before him and to furnish a security bond with or without sureties for attendance during the inquiry.</li>
 </ol>
-<ol class="numbered-list" type="a" start="2">
-<li>The provisions of sections 1.19 to 1.24 (both inclusive) of the Code of Criminal Procedure, 1973 (2 of 1974), shall, so far as may be, apply in relation to the order under clause (a) to furnish security bond.</li>
+<ol class="numbered-list sub-numbered-list" type="a" start="2">
+<li class="subparagraph-item"><em>The provisions of sections 1.19 to 1.24 (both inclusive) of the Code of Criminal Procedure, 1973 (2 of 1974), shall, so far as may be, apply in relation to the order under clause (a) to furnish security bond.</em></li>
 </ol>
 <ol class="numbered-list" start="6">
 <li>Without prejudice to the foregoing provisions, the Commissioner of Police, while issuing notice to any person under sub-section (1) may issue a warrant for his arrest and the provisions of sections 70 to 89 (both inclusive) of the Code of Criminal Procedure, 1973 (2 of 1974), shall, so far as may be, apply in relation to such warrant.</li>
 <li>The provisions of section 445, section 446, section 447 or section 448 of the Code of Criminal Procedure, 1973 (2 of 1974), shall, so far as may be, apply in relation to all bonds executed under this section. Section 51 - Appeal against orders under sections 46, 47 or 48</li>
 </ol>
-<ol class="numbered-list" start="1">
-<li>Any person aggrieved by an order made under section 46, section 47 or section 48 may appeal to the Administrator within thirty days from the date of the service of such order on him.</li>
-<li>An appeal under this section shall be preferred in duplicate in the form of a memorandum, setting forth concisely the grounds of objection to the order appealed against, and shall be accompanied by that order or a certified copy thereof.</li>
-<li>On receipt of such appeal, the Administrator may, after giving a reasonable opportunity to the appellant to be heard either personally or by a counsel and after such further inquiry, if any, as he may deem necessary, confirm, vary or set aside the order appealed against: Provided that the order appealed against shall remain in force pending the disposal of the appeal, unless the Administrator otherwise directs.</li>
-<li>The Administrator shall make every endeavour to dispose of an appeal under this section within a period of three months from the date of receipt of such appeal.</li>
-<li>In calculating the period of thirty days provided for an appeal under this section, the lime taken for obtaining a certified copy of the order appealed against, shall be excluded. Section 52 - Finality of order in certain cases - An order passed by the Commissioner of Police under section 46, section 47 or section 48 or the Administrator under section 51 shall not be called in question in any court except on the ground--</li>
+<ol class="numbered-list sub-numbered-list" start="1">
+<li class="subparagraph-item"><em>Any person aggrieved by an order made under section 46, section 47 or section 48 may appeal to the Administrator within thirty days from the date of the service of such order on him.</em></li>
+<li class="subparagraph-item"><em>An appeal under this section shall be preferred in duplicate in the form of a memorandum, setting forth concisely the grounds of objection to the order appealed against, and shall be accompanied by that order or a certified copy thereof.</em></li>
+<li class="subparagraph-item"><em>On receipt of such appeal, the Administrator may, after giving a reasonable opportunity to the appellant to be heard either personally or by a counsel and after such further inquiry, if any, as he may deem necessary, confirm, vary or set aside the order appealed against: Provided that the order appealed against shall remain in force pending the disposal of the appeal, unless the Administrator otherwise directs.</em></li>
+<li class="subparagraph-item"><em>The Administrator shall make every endeavour to dispose of an appeal under this section within a period of three months from the date of receipt of such appeal.</em></li>
+<li class="subparagraph-item"><em>In calculating the period of thirty days provided for an appeal under this section, the lime taken for obtaining a certified copy of the order appealed against, shall be excluded. Section 52 - Finality of order in certain cases - An order passed by the Commissioner of Police under section 46, section 47 or section 48 or the Administrator under section 51 shall not be called in question in any court except on the ground--</em></li>
 </ol>
-<ol class="numbered-list" type="a" start="1">
-<li>that the Commissioner of Police or the Administrator, as the case may be, had not followed the procedure laid down in subsection (1), sub-section (2) or sub-section (4) of section 50 or in section 51, as the case may be; or</li>
-<li>that there was no material before the Commissioner of Police or the Administrator, as the case may be, upon which he could have based his order; or</li>
-<li>in the case of an order made under section 47 or an order in appeal therefrom to the Administrator under section 51, the Commissioner of Police or the Administrator, as the case may be, was not of the opinion that witnesses were unwilling to come forward to give evidence in public against the person against whom such order has been made.”</li>
+<ol class="numbered-list sub-numbered-list" type="a" start="1">
+<li class="subparagraph-item"><em>that the Commissioner of Police or the Administrator, as the case may be, had not followed the procedure laid down in subsection (1), sub-section (2) or sub-section (4) of section 50 or in section 51, as the case may be; or</em></li>
+<li class="subparagraph-item"><em>that there was no material before the Commissioner of Police or the Administrator, as the case may be, upon which he could have based his order; or</em></li>
+<li class="subparagraph-item"><em>in the case of an order made under section 47 or an order in appeal therefrom to the Administrator under section 51, the Commissioner of Police or the Administrator, as the case may be, was not of the opinion that witnesses were unwilling to come forward to give evidence in public against the person against whom such order has been made.”</em></li>
 </ol>
 <ol class="numbered-list" start="14">
 <li>Section 47 of the Act refers to the situation under which a person could be removed from the territory of Delhi. The situation enumerated are that if the movement of such person causes alarm, danger or harm or the proceedee is or about the commit offences under various sections of the Indian Penal Code or that such person is so desperate and dangerous so as to render his roaming at large in Delhi hazardous to the community or has been habitually intimidating persons or causing affray or passing indecent remarks on women and girls. If in conjunction with any one of the grounds or all the grounds, the competent authority namely the Commissioner of Police frames his opinion that out of fear nobody is coming forward to depose against such person, he could either be directed to behave or to remove himself outside Delhi or to remove himself from any specified part of Delhi for a fixed duration/tenure.</li>
@@ -177,8 +253,9 @@
 <li>There does not appear to be any material so as to justify the assessment that witnesses are not daring to come in open to depose against the petitioner.</li>
 <li>Tested on the touchstone of aforementioned facts and principles, the externment and the appellate orders cannot be sustained in the eyes of law.</li>
 <li>The externment order dated 02.07.2015 passed by the Deputy Commissioner of Police and the appellate order dated 05.08.2015 passed by the LG, Delhi are, therefore, quashed.</li>
-<li>The petition stands disposed of accordingly. Crl. M.A. No.13495/2015</li>
+<li>The petition stands disposed of accordingly.</li>
 </ol>
+<h4>Crl. M.A. No.13495/2015</h4>
 <ol class="numbered-list" start="1">
 <li>In view of the main petition having been allowed, this application becomes infructuous.</li>
 <li>This application is disposed of accordingly.</li>
@@ -186,6 +263,7 @@
 <p data-page="15">ASHUTOSH KUMAR, J</p>
 <h3>DECEMBER 04, 2015</h3>
 <p data-page="15">k</p>
+
     </article>
   </main>
 </body>

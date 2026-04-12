@@ -40,6 +40,12 @@
     h3 {
       font-size: 1.12rem;
     }
+    h4 {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      margin-top: 0.95em;
+    }
     p {
       margin: 0.65em 0;
       text-align: justify;
@@ -49,6 +55,22 @@
       line-height: 1.45;
       margin-top: 0.5em;
     }
+    .citation-ref a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup, sub {
+      font-size: 0.72em;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup {
+      top: -0.48em;
+    }
+    sub {
+      bottom: -0.18em;
+    }
     ol, ul {
       margin: 0.65em 0 0.95em 1.5em;
       padding: 0;
@@ -56,6 +78,13 @@
     li {
       margin: 0.28em 0;
       padding-left: 0.2em;
+    }
+    .sub-numbered-list {
+      margin-left: 3rem;
+      padding-left: 0.35rem;
+    }
+    .subparagraph-item {
+      font-style: italic;
     }
     .table-wrap {
       margin: 1.15em 0 1.45em;
@@ -86,6 +115,40 @@
       border: 1px solid var(--rule);
       background: white;
     }
+    .citations {
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      break-before: page;
+      page-break-before: always;
+    }
+    .citations h2 {
+      margin-top: 0;
+    }
+    .citation-list {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+    }
+    .citation-list li {
+      display: grid;
+      grid-template-columns: minmax(2.8rem, auto) 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      margin: 0.55rem 0;
+      padding: 0;
+    }
+    .citation-marker {
+      font-weight: 700;
+    }
+    .citation-text {
+      min-width: 0;
+    }
+    .citation-backref {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.3rem;
+    }
     @media print {
       html, body {
         background: white;
@@ -105,25 +168,40 @@
 <body>
   <main>
     <article>
-<figure class="page-facsimile" data-page="1"><img src="assets/abh21042011crlmm34072009/abh21042011crlmm34072009-page-0001.png" alt="Facsimile of page 1" /></figure>
-<p data-page="2">complaint 301/2005 under Section 7 and 16 of Prevention of Food Adulteration Act 1954 (hereinafter referred to as the “PFA Act”) against nine persons including the petitioner for alleged violation of Section 2(a)(j) and Section 2(ix) (j) of the PFA Act 1954 and also Rule 29 of PFA Rules 1955.</p>
-<ol class="numbered-list" start="3">
-<li>It is alleged in the complaint that on 15.01.2005, respondent Food Inspector purchased a sample of “Mango Crush” allegedly manufactured by M/s. Mapro Foods Pvt. Ltd, for analysis from one Mukesh Kumar of M/s. Shivam Enterprises (vendor) where the said food article was stored for sale. The sample comprised of three original sealed bottles of “Mango Crush” of 700 ml each which were properly labelled and taken into possession.</li>
-<li>That on 17.01.2005, one counterpart of the aforesaid sample of food article was sent to the public analyst, Delhi for analysis. The public analyst vide his report dated 27.01.2005 opined although there was no standard prescribed for mango crush under Appendix B to the PFA Act 1954, the sample contained added synthetic colour which is not permissible under Rule 29 of PFA Rules.</li>
-<li>It is alleged in the complaint that the sample was allegedly purchased by the vendor from M/s. Shivam Enterprises who allegedly purchased it from M/s. Manish Enterprises, Mali Wara, Chandni Chowk and M/s. Manish Enterprises had purchased the same from the manufacturing company i.e. M/s. Mapro Foods Pvt. Ltd.</li>
-<li>That on 22.12.2005, learned Metropolitan Magistrate took cognizance of the offence and issued summoning order against the petitioner and others. The petitioner is aggrieved of the aforesaid summoning order on the ground that at the relevant time there was no prescribed standard for fruit crush and the “Mango Crush” manufacture was regulated by Fruit Products Order 1955 (FPO) which lays down the standards of quality and procedure for manufacture of the impugned food article. The petitioner M/s. Mapro Foods Pvt. Ltd was holding a valid licence for manufacture of “Mango Crush” under the FPO 1955 and there is no violation of the terms and conditions of said licence or the provisions of FPO 1955. Thus, there was no occasion for summoning the petitioner for offences punishable under Section 7 and 16 of PFA Act 1954.</li>
-<li>Learned Shri Sidharth Luthra, Sr. Advocate appearing for the petitioner submitted that from the report of public analyst as also Appendix B to the PFA Rules, no quality standard for “Mango Crush” was provided and that being the case there could be no violation of provision of PFA Act and the rules framed thereunder. Learned counsel further submitted that there is no allegations of violation of quality standard in terms of “Fruit Products Order 1955”, as such no offence can be said to have committed by the petitioner. It is argued that initiation of prosecution of the petitioner is under misconception of law as there is no violation of Section 2(j) of the PFA Act as the sample that allegedly used in the food sample as per the public analyst is tartrazine which is a permissible colour under Rule 28 of PFA Rules. Further, learned counsel for the petitioner relying upon the judgment of Supreme Court in Hindustan Lever Ltd. Vs. Food Inspector and Another, (2004) 13 SCC 83 submitted that since no standards were prescribed under the PFA Act and PFA Rules for the fruit crush, prosecution of the petitioner with regard to the impugned food article applying the standards for other food articles would not be sustainable. Thus, the learned counsel for the petitioner have strongly urged for quashing of the complaint as well as the summoning order qua the petitioner.</li>
-<li>Learned APP, on the contrary, submits that there can be no dispute that mango crush squarely falls within the definition of food article as defined under Section 2(v) of PFA Act 1954. Learned APP has referred to Rule 28 and 29 of PFA Rules 1955 and submitted that user of tartrazine sunset yellow in food articles other than detailed in Rule 29 is prohibited and fruit crush does not fall within any of the food articles enumerated in Rule 29, as such by using the prohibited colour in the “mango crush” the manufacturing company of which the petitioner is the director has violated the provisions of Food Adulteration Act and the rules framed thereunder. Therefore, the petitioner is rightly being prohibited under Section 7 and 16 of PFA Act. Thus, learned APP has urged for dismissal of the petition.</li>
-<li>I have considered the rival contentions and perused the record. Copy of the report of public analyst is annexed to the petition. Its correctness is not disputed by the respondent. As per this report, the public analyst has opined that there is no standards prescribed for mango crush under Appendix B but the food sample contains added synthetic colour which is not permitted under Rule 29 of PFA Rules. The public analyst has not found any other defect or flaw in the sample. Perusal of this report indicates that the colour used in the sample is tartrazine.</li>
-<li>Rule 29 of PFA Rules 1955 reads thus:</li>
+<h3>IN THE HIGH COURT OF DELHI AT NEW DELHI</h3>
+<p data-page="1">Judgment reserved on: April 04, 2011 Judgment delivered on: April 21, 2011</p>
+<h3>+ CRL.M.C. 3407/2009 &amp; CRL.M.A.11557/2009</h3>
+<p data-page="1">SMT. RAJVI VORA....PETITIONER</p>
+<p data-page="1">Through: Mr.Sidharth Luthra, Sr. Advocate with Mr. Madhav Khurana, Ms. Arundhati, Advocates.</p>
+<h3>Versus</h3>
+<h3>GOVERNMENT OF NCT OF DELHI....RESPONDENT</h3>
+<p data-page="1">Through: Ms. Fizani Husain, APP.</p>
+<p data-page="1">CORAM:</p>
+<h3>HON&#x27;BLE MR. JUSTICE AJIT BHARIHOKE</h3>
+<ol class="numbered-list" start="1">
+<li>Whether Reporters of local papers may be allowed to see the judgment?</li>
+<li>To be referred to the Reporter or not ?</li>
+<li>Whether the judgment should be reported in Digest ? AJIT BHARIHOKE, J.</li>
 </ol>
-<ol class="numbered-list" type="a" start="1">
-<li>--------</li>
-<li>---------</li>
-<li>Peas, strawberries and cherries in hermaticlly sealed container, preserved or processed oapaya, canned tomato juice, fruit syrup, fruit squash, fruit cordial, jellies, jam, marmalade, candied crystallised or glazed fruits;</li>
-<li>Non-alcoholic carbonated and non- carbonated ready-to- serve synthetic beverages including synthetic syrups, sherbets, fruit bar, fruit beverages, fruit drinks, synthetic soft drink concentrates;</li>
-<li>----------</li>
-<li>----------</li>
+<ol class="numbered-list sub-numbered-list" start="1">
+<li class="subparagraph-item"><em>Smt. Rajvi Vora vide this petition under Section 482 Cr.P.C. has prayed for quashing of complaint case No.301/2005 titled Food Inspector Vs. Mukesh Kumar &amp; Others pending in the court of Metropolitan Magistrate, New Delhi and the summoning order dated 22.12.2005 passed in that complaint qua him.</em></li>
+<li class="subparagraph-item"><em>Briefly stated, the facts relevant for the disposal of this petition are that respondent Food Inspector on 22.12.2005 filed criminal complaint 301/2005 under Section 7 and 16 of Prevention of Food Adulteration Act 1954 (hereinafter referred to as the “PFA Act”) against nine persons including the petitioner for alleged violation of Section 2(a)(j) and Section 2(ix) (j) of the PFA Act 1954 and also Rule 29 of PFA Rules 1955.</em></li>
+<li class="subparagraph-item"><em>It is alleged in the complaint that on 15.01.2005, respondent Food Inspector purchased a sample of “Mango Crush” allegedly manufactured by M/s. Mapro Foods Pvt. Ltd, for analysis from one Mukesh Kumar of M/s. Shivam Enterprises (vendor) where the said food article was stored for sale. The sample comprised of three original sealed bottles of “Mango Crush” of 700 ml each which were properly labelled and taken into possession.</em></li>
+<li class="subparagraph-item"><em>That on 17.01.2005, one counterpart of the aforesaid sample of food article was sent to the public analyst, Delhi for analysis. The public analyst vide his report dated 27.01.2005 opined although there was no standard prescribed for mango crush under Appendix B to the PFA Act 1954, the sample contained added synthetic colour which is not permissible under Rule 29 of PFA Rules.</em></li>
+<li class="subparagraph-item"><em>It is alleged in the complaint that the sample was allegedly purchased by the vendor from M/s. Shivam Enterprises who allegedly purchased it from M/s. Manish Enterprises, Mali Wara, Chandni Chowk and M/s. Manish Enterprises had purchased the same from the manufacturing company i.e. M/s. Mapro Foods Pvt. Ltd.</em></li>
+<li class="subparagraph-item"><em>That on 22.12.2005, learned Metropolitan Magistrate took cognizance of the offence and issued summoning order against the petitioner and others. The petitioner is aggrieved of the aforesaid summoning order on the ground that at the relevant time there was no prescribed standard for fruit crush and the “Mango Crush” manufacture was regulated by Fruit Products Order 1955 (FPO) which lays down the standards of quality and procedure for manufacture of the impugned food article. The petitioner M/s. Mapro Foods Pvt. Ltd was holding a valid licence for manufacture of “Mango Crush” under the FPO 1955 and there is no violation of the terms and conditions of said licence or the provisions of FPO 1955. Thus, there was no occasion for summoning the petitioner for offences punishable under Section 7 and 16 of PFA Act 1954.</em></li>
+<li class="subparagraph-item"><em>Learned Shri Sidharth Luthra, Sr. Advocate appearing for the petitioner submitted that from the report of public analyst as also Appendix B to the PFA Rules, no quality standard for “Mango Crush” was provided and that being the case there could be no violation of provision of PFA Act and the rules framed thereunder. Learned counsel further submitted that there is no allegations of violation of quality standard in terms of “Fruit Products Order 1955”, as such no offence can be said to have committed by the petitioner. It is argued that initiation of prosecution of the petitioner is under misconception of law as there is no violation of Section 2(j) of the PFA Act as the sample that allegedly used in the food sample as per the public analyst is tartrazine which is a permissible colour under Rule 28 of PFA Rules. Further, learned counsel for the petitioner relying upon the judgment of Supreme Court inHindustan Lever Ltd. Vs.Food Inspector and Another,(2004) 13 SCC 83 submitted that since no standards were prescribed under the PFA Act and PFA Rules for the fruit crush, prosecution of the petitioner with regard to the impugned food article applying the standards for other food articles would not be sustainable. Thus, the learned counsel for the petitioner have strongly urged for quashing of the complaint as well as the summoning order qua the petitioner.</em></li>
+<li class="subparagraph-item"><em>Learned APP, on the contrary, submits that there can be no dispute that mango crush squarely falls within the definition of food article as defined under Section 2(v) of PFA Act 1954. Learned APP has referred to Rule 28 and 29 of PFA Rules 1955 and submitted that user of tartrazine sunset yellow in food articles other than detailed in Rule 29 is prohibited and fruit crush does not fall within any of the food articles enumerated in Rule 29, as such by using the prohibited colour in the “mango crush” the manufacturing company of which the petitioner is the director has violated the provisions of Food Adulteration Act and the rules framed thereunder. Therefore, the petitioner is rightly being prohibited under Section 7 and 16 of PFA Act. Thus, learned APP has urged for dismissal of the petition.</em></li>
+<li class="subparagraph-item"><em>I have considered the rival contentions and perused the record. Copy of the report of public analyst is annexed to the petition. Its correctness is not disputed by the respondent. As per this report, the public analyst has opined that there is no standards prescribed for mango crush under Appendix B but the food sample contains added synthetic colour which is not permitted under Rule 29 of PFA Rules. The public analyst has not found any other defect or flaw in the sample. Perusal of this report indicates that the colour used in the sample is tartrazine.</em></li>
+<li class="subparagraph-item"><em>Rule 29 of PFA Rules 1955 reads thus:</em></li>
+</ol>
+<ol class="numbered-list sub-numbered-list" type="a" start="1">
+<li class="subparagraph-item"><em>--------</em></li>
+<li class="subparagraph-item"><em>---------</em></li>
+<li class="subparagraph-item"><em>Peas, strawberries and cherries in hermaticlly sealed container, preserved or processed oapaya, canned tomato juice, fruit syrup, fruit squash, fruit cordial, jellies, jam, marmalade, candied crystallised or glazed fruits;</em></li>
+<li class="subparagraph-item"><em>Non-alcoholic carbonated and non- carbonated ready-to- serve synthetic beverages including synthetic syrups, sherbets, fruit bar, fruit beverages, fruit drinks, synthetic soft drink concentrates;</em></li>
+<li class="subparagraph-item"><em>----------</em></li>
+<li class="subparagraph-item"><em>----------</em></li>
 </ol>
 <ol class="numbered-list" start="11">
 <li>On reading of the aforesaid provision, it is clear that user of yellow tartrazine is permissible in fruits syrup, fruit squash and fruit cordial etc. Undisputably fruits squash and fruits syrups are the product prepared from fruit juice/puree or concentrate clear or cloudy obtained from any fruit or several fruits by blending it with nutritive sweeteners, water and with or without salt. Fruit crush is also a product made from the fruit or fruit juice/puree or concentrate of fruit juice only difference is that it contains mere pulp. Thus, there can be no distinction between the fruit squash, fruit syrup or fruit crush so far as applicability of the PFA Act and the Rules prescribed thereunder is concerned. My aforesaid view finds support from the definition of squashes, crush, fruit syrups/fruit sarbats and barley water given in A.16.21 of Appendix B incorporated in the Appendix B subsequently by an amendment in the year 2005, which reads thus: “A.16.21- SQUASHES, CRUSHES, FRUIT SYRUPS/FRUIT SHARBATS AND BARELY WATER means the product prepared from unfermented but fermentable fruit juice/puree or concentrate clear or cloudy, obtained from any suitable fruit or several fruits by blending it with nutritive sweeteners, water and with or without salt, aromatic herbs, peel oil and any other ingredients suitable to the products.”</li>
@@ -133,6 +211,7 @@
 </ol>
 <p data-page="7">(AJIT BHARIHOKE) JUDGE</p>
 <p data-page="7">APRIL 21, 2011 pst</p>
+
     </article>
   </main>
 </body>

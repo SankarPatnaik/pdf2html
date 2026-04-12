@@ -40,6 +40,12 @@
     h3 {
       font-size: 1.12rem;
     }
+    h4 {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      margin-top: 0.95em;
+    }
     p {
       margin: 0.65em 0;
       text-align: justify;
@@ -49,6 +55,22 @@
       line-height: 1.45;
       margin-top: 0.5em;
     }
+    .citation-ref a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup, sub {
+      font-size: 0.72em;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup {
+      top: -0.48em;
+    }
+    sub {
+      bottom: -0.18em;
+    }
     ol, ul {
       margin: 0.65em 0 0.95em 1.5em;
       padding: 0;
@@ -56,6 +78,13 @@
     li {
       margin: 0.28em 0;
       padding-left: 0.2em;
+    }
+    .sub-numbered-list {
+      margin-left: 3rem;
+      padding-left: 0.35rem;
+    }
+    .subparagraph-item {
+      font-style: italic;
     }
     .table-wrap {
       margin: 1.15em 0 1.45em;
@@ -86,6 +115,40 @@
       border: 1px solid var(--rule);
       background: white;
     }
+    .citations {
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      break-before: page;
+      page-break-before: always;
+    }
+    .citations h2 {
+      margin-top: 0;
+    }
+    .citation-list {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+    }
+    .citation-list li {
+      display: grid;
+      grid-template-columns: minmax(2.8rem, auto) 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      margin: 0.55rem 0;
+      padding: 0;
+    }
+    .citation-marker {
+      font-weight: 700;
+    }
+    .citation-text {
+      min-width: 0;
+    }
+    .citation-backref {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.3rem;
+    }
     @media print {
       html, body {
         background: white;
@@ -105,20 +168,29 @@
 <body>
   <main>
     <article>
-<figure class="page-facsimile" data-page="1"><img src="assets/abh01042011crlr1502011-101829/abh01042011crlr1502011-101829-page-0001.png" alt="Facsimile of page 1" /></figure>
-<p data-page="2">The Division Bench after discussing number of judgments on the subject have answered the reference in following terms: &quot;33. In view of our aforesaid discussion, we proceed to answer the reference on following terms:</p>
-<ol class="numbered-list" type="a" start="1">
-<li>An order framing charge under the Prevention of Corruption Act, 1988 is an interlocutory order.</li>
-<li>As Section 19(3)(c) clearly bars revision against an Interlocutory order and framing of charge being an interlocutory order a revision will not be maintainable.</li>
-<li>A petition under Section 482 of the Code of Criminal Procedure and a writ petition preferred under Article 227 of the Constitution of India are maintainable.</li>
-<li>Even if a petition under Section 482 of the Code of Criminal Procedure or a writ petition under Article 227 of the Constitution of India is entertained by the High Court under no circumstances an order of stay should be passed regard being had to the prohibition contained in Section 19(3)(c) of the 1988 Act.</li>
-<li>The exercise of power either under Section 482 of the Code of Criminal Procedure or under Article 227 of the Constitution of India should be sparingly and in exceptional circumstances be exercised keeping in view the law laid down in Siya Ram Singh (supra), Vishesh Kumar (supra), Khalil Ahmed Bashir Ahmed (supra), Kamal Nath &amp; Others (supra) Ranjeet Singh (supra) and similar line of decisions in the field.</li>
-<li>It Is settled law that jurisdiction under Section 482 of the Code of Criminal Procedure or under Article 227 of the Constitution of India cannot be exercised as a &quot;cloak of an appeal in disguise&quot; or to reappreciate evidence. The aforesaid proceedings should be used sparingly with great care, caution, circumspection and only to prevent grave miscarriage of justice.</li>
+<p data-page="1">#42 01.04.2011 Present: Mr. Pradeep Norula, Advocate for the petitioner. Mr. Vikas Pahwa, Standing Counsel for the CBI/respondent.</p>
+<p data-page="1">+ Crl.M.A.No.3959/2011(Exemption) Exemption allowed, subject to all just exceptions.</p>
+<p data-page="1">Application stands disposed of.</p>
+<p data-page="1">+Crl.Rev.Pet. NO.150/2011 &amp; CrI.M.A. N0.3958/2011(stav) Learned Shri Vikas Pahwa, Standing Counsel for the CBI has raised a preliminary objection that the instant revision petition against the framing of charge is not maintainable under law. In support of this contention, he has referred to the judgment of the Division Bench of this Court dated 29.03.2011 in a batch matter being Writ Petition(Crl). No.80/2010 and 36 other connected matters.</p>
+<p data-page="1">I have perused the judgment referred to by learned Standing Counsel for the CBI. In the aforesaid judgment, the Division Bench of this Court was required to answer the reference made by learned Single Judge of this Court in respect of following questions: &quot;Whether an order on charge framed by a Special Judge under the provisions of Prevention of Corruption Act, being an interlocutory order, and when no revision against the order or a petition under Section 482 of Cr.P.C. lies, can be assailed under Article 226/227 of the Constitution of India, whether or not the offences committed include the offences under Indian Penal Code apart from offences under Prevention of Corruption Act?&quot; The Division Bench after discussing number of judgments on the subject have answered the reference in following terms:</p>
+<ol class="numbered-list" start="33">
+<li>&quot;33. In view of our aforesaid discussion, we proceed to answer the reference on following terms:</li>
+</ol>
+<ol class="numbered-list sub-numbered-list" type="a" start="1">
+<li class="subparagraph-item"><em>Anorderframing charge underthe Prevention of Corruption Act, 1988 is an interlocutory order.</em></li>
+<li class="subparagraph-item"><em>As Section 19(3)(c) clearly bars revision against an Interlocutory order and framing of charge being an interlocutory order a revision will not be maintainable.</em></li>
+<li class="subparagraph-item"><em>A petition under Section 482 of the Code of Criminal Procedure and a writ petition preferred underArticle 227 ofthe Constitution of India are maintainable.</em></li>
+<li class="subparagraph-item"><em>Even if a petition under Section 482 of the Code of Criminal Procedure or a writ petition under Article 227 of the Constitution of India is entertained by the High Court under no circumstances an order of stay should be passed regard being had to the prohibition contained in Section 19(3)(c) ofthe 1988 Act.</em></li>
+<li class="subparagraph-item"><em>The exercise of power either under Section 482 of the Code of Criminal Procedure or under Article 227 of the Constitution of India should be sparingly and in exceptional circumstances be exercised keeping in view the law laid down in Siya Ram Singh (supra), Vishesh Kumar (supra), Khalil Ahmed Bashir Ahmed (supra), Kamal Nath &amp; Others (supra) Ranjeet Singh (supra) and similar line of decisions in the field.</em></li>
+<li class="subparagraph-item"><em>It Issettled law that jurisdiction under Section 482 of the Code of Criminal Procedure or under Article 227 of the Constitution of India cannot be exercised as a &quot;cloak of an appeal in disguise&quot; or to reappreciate evidence. The aforesaid proceedings should be used sparingly with great care, caution, circumspection and only to prevent grave miscarriage of justice.</em></li>
 </ol>
 <ol class="numbered-list" start="34">
-<li>Reference is answered accordingly. The writ petitions be listed before the appropriate Bench.&quot;</li>
+<li>Reference is answered accordingly. The writ petitions be listed before the appropriate Bench.&quot; In view of the above finding of the Hon&#x27;ble Division Bench, an order framing charge under Prevention of Corruption Act, 1988 under interlocutory order and Section 19(3)(c) clearly bars the revision against an interlocutory order framing the charge.</li>
 </ol>
-<figure class="page-facsimile" data-page="3"><img src="assets/abh01042011crlr1502011-101829/abh01042011crlr1502011-101829-page-0003.png" alt="Facsimile of page 3" /></figure>
+<p data-page="3">Instant case is also against the framing of charge in corruption case. Therefore, it is not maintainable.</p>
+<p data-page="3">Petition is accordingly dismissed.</p>
+<p data-page="3">(AJIT BHARIHOKE) JUDGE APRIL 01, 2011 pst</p>
+
     </article>
   </main>
 </body>

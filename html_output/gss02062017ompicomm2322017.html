@@ -40,6 +40,12 @@
     h3 {
       font-size: 1.12rem;
     }
+    h4 {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      margin-top: 0.95em;
+    }
     p {
       margin: 0.65em 0;
       text-align: justify;
@@ -49,6 +55,22 @@
       line-height: 1.45;
       margin-top: 0.5em;
     }
+    .citation-ref a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup, sub {
+      font-size: 0.72em;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup {
+      top: -0.48em;
+    }
+    sub {
+      bottom: -0.18em;
+    }
     ol, ul {
       margin: 0.65em 0 0.95em 1.5em;
       padding: 0;
@@ -56,6 +78,13 @@
     li {
       margin: 0.28em 0;
       padding-left: 0.2em;
+    }
+    .sub-numbered-list {
+      margin-left: 3rem;
+      padding-left: 0.35rem;
+    }
+    .subparagraph-item {
+      font-style: italic;
     }
     .table-wrap {
       margin: 1.15em 0 1.45em;
@@ -86,6 +115,40 @@
       border: 1px solid var(--rule);
       background: white;
     }
+    .citations {
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      break-before: page;
+      page-break-before: always;
+    }
+    .citations h2 {
+      margin-top: 0;
+    }
+    .citation-list {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+    }
+    .citation-list li {
+      display: grid;
+      grid-template-columns: minmax(2.8rem, auto) 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      margin: 0.55rem 0;
+      padding: 0;
+    }
+    .citation-marker {
+      font-weight: 700;
+    }
+    .citation-text {
+      min-width: 0;
+    }
+    .citation-backref {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.3rem;
+    }
     @media print {
       html, body {
         background: white;
@@ -105,20 +168,36 @@
 <body>
   <main>
     <article>
-<figure class="page-facsimile" data-page="1"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0001.png" alt="Facsimile of page 1" /></figure>
+<p data-page="1">$~S-1</p>
+<h3>* IN THE HIGH COURT OF DELHI AT NEW DELHI</h3>
+<p data-page="1">Judgment dated: 2ndJune, 2017 %</p>
+<h3>+ O.M.P. (I) (COMM) 232/2017</h3>
+<p data-page="1">ESSAR PROJECTS(INDIA) LIMITED..... Petitioner Through : Mr.Gopal Jain, Senior Advocate with Mr.Puneet Singh Bindra, Ms.Sumanta Nayak, Mr.Aslam Ahmad, Mr.Sharad Khaira, Ms.Hema Patnaik and Mr.Sonal Alagh, Advocates</p>
+<figure class="embedded-figure" data-page="1"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0001-image-1.jpeg" alt="Embedded figure from page 1" /></figure>
+<h3>versus</h3>
+<p data-page="1">INDIAN OIL CORPORATION LIMITED &amp; ANR...... Respondents Through : Mr.Abhinav Vashist, Senior Advocate along with Mr.Amit Meharia, Ms.Tannishtha Singh and Ms.Ayushi Gupta, Advocates for respondent no.1.</p>
+<p data-page="1">CORAM:</p>
+<h3>HON’BLE MR. JUSTICE G.S. SISTANI</h3>
+<h3>G.S.SISTANI, J.(ORAL)</h3>
+<p data-page="1">CAV.PET. /2017(to be numbered)</p>
+<ol class="numbered-list" start="1">
+<li>A caveat is said to have been filed, the same is not on record. Let the same be brought on record and numbered. Mr.Abhinav Vashist, Senior Advocate, on instructions, has appeared.</li>
+<li>Accordingly, the caveat stands disposed of.</li>
+</ol>
+<h4>I.A. 7117/2017 (Exemption)</h4>
 <ol class="numbered-list" start="3">
 <li>This is an application filed by petitioner under Section 151 of the Code of Civil Procedure seeking exemption from filing original documents relied upon by the petitioner at this stage.</li>
 <li>The original documents relied upon shall be filed by the petitioner within eight weeks from today.</li>
 <li>Application stands disposed of.</li>
 </ol>
-<p data-page="2">I.A. 7118/2017 (Exemption)</p>
+<h4>I.A. 7118/2017 (Exemption)</h4>
 <figure class="embedded-figure" data-page="2"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0002-image-1.jpeg" alt="Embedded figure from page 2" /></figure>
 <ol class="numbered-list" start="6">
 <li>This is an application filed by petitioner under Section 151 of the Code of Civil Procedure seeking exemption from filing typed copy of dim annexures relied upon by the petitioner.</li>
 <li>Let the legible copies/typed copy of the dim annexures be filed by the petitioner within eight weeks from today.</li>
 <li>Application stands disposed of.</li>
 </ol>
-<p data-page="2">I.A. 7116/2017 (Exemption)</p>
+<h4>I.A. 7116/2017 (Exemption)</h4>
 <ol class="numbered-list" start="9">
 <li>This is an application filed by petitioner under Section 151 of the Code of Civil Procedure seeking exemption from filing complete copy of Contract dated 28.02.2011.</li>
 <li>Let the complete set of Contract be filed by the petitioner within six weeks from today.</li>
@@ -127,7 +206,7 @@
 <h3>O.M.P. (I) (COMM) 232/2017</h3>
 <ol class="numbered-list" start="12">
 <li>This petition under Section 9 of the Arbitration and Conciliation Act, 1996 has been listed upon mentioning.</li>
-<li>By the present petition, the petitioner inter alia prays for restraining the respondents from encashing bank guarantees no.160004IBGA00036 and 16000IBGA00037 dated 28.03.2016.</li>
+<li>By the present petition, the petitionerinter aliaprays for restraining the respondents from encashing bank guarantees no.160004IBGA00036 and 16000IBGA00037 dated 28.03.2016.</li>
 <li>Mr. Gopal Jain, learned Senior Counsel for the petitioner submits that the petitioner was awarded a contract (for short „EPC contract‟) on 28.02.2011, also known as Paradip Refinery Project (hereinafter referred to as the „Project‟) of Indian Oil Corporation („IOC‟)/respondent no.1. It is the case of the petitioner that M/s. Foster</li>
 </ol>
 <figure class="embedded-figure" data-page="3"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0003-image-1.jpeg" alt="Embedded figure from page 3" /></figure>
@@ -142,9 +221,9 @@
 <li>The sum and substance of the argument of the learned counsel for the petitioner is that the claims sought to be adjusted by the respondent no.1 have not been adjudicated and it is the petitioner who has to recover almost Rs.900 Crores from the respondent no.1. The learned Senior Counsel for the petitioner submits that the petitioner would be put to irreparable loss and till the final determination of the claims of the respondents are adjudicated upon and in case the bank guarantees are allowed to be encashed, the petitioner would be put to serious loss and</li>
 </ol>
 <figure class="embedded-figure" data-page="5"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0005-image-1.jpeg" alt="Embedded figure from page 5" /></figure>
-<p data-page="5">thus, special equities flow in favour of the petitioner would be lost. Mr. Jain has strenuously urged before this Court that the respondent has given no reasons for invocation of the bank guarantee. Reliance is placed in the case of A.S. Motors Pvt. Ltd. v. Union of India (UOI) and Ors., (2013) 10 SCC 114 (paragraph 24).</p>
+<p data-page="5">thus, special equities flow in favour of the petitioner would be lost. Mr. Jain has strenuously urged before this Court that the respondent has given no reasons for invocation of the bank guarantee. Reliance is placed in the case ofA.S. Motors Pvt. Ltd.v. Union of India (UOI) and Ors.,(2013) 10 SCC 114(paragraph 24).</p>
 <ol class="numbered-list" start="18">
-<li>Relying upon J.G. Engineers Pvt. Ltd. v. Union of India (UOI) and Anr., (2011) 5 SCC 738 (paragraph 19 and 20) and State of Karnataka v. Shree Rameshwara Rice Mills, Thirthahalli, (1987) 2 SCC 160 (paragraph 7), Mr.Jain has further submitted that the respondent no.1 cannot be an arbiter in its own cause and decide both the question of breach and the quantum of damages and therefore, the petitioner is entitled to an injunctive order against the respondents.</li>
+<li>Relying uponJ.G. Engineers Pvt. Ltd.v. Union of India (UOI) and Anr.,(2011) 5 SCC 738(paragraph 19 and 20) andState of Karnataka v. Shree Rameshwara Rice Mills, Thirthahalli, (1987) 2 SCC 160 (paragraph 7), Mr.Jain has further submitted that the respondent no.1 cannot be an arbiter in its own cause and decide both the question of breach and the quantum of damages and therefore, the petitioner is entitled to an injunctive order against the respondents.</li>
 <li>Per contra, Mr.Abhinav Vashist, learned Senior Counsel appearing for the respondent no.1, while relying on the terms of the bank guarantee submits that the bank guarantees in question are unconditional bank guarantees and an independent contract between the bank and the respondent no.1. It is submitted that in invocation of the bank guarantee, the amounts are to be paid without any protest or demur, which is incorporated in the terms of the bank guarantee and provided by the petitioner with open eyes. The learned Senior Counsel submits that both the bank guarantees are identical and relies on the following conditions of the bank guarantees: “We IDBI Bank Limited, a company incorporated and registered under the Companies Act, 1956 and a banking company within the meaning of Section 5(c) of the Banking Regulation Act, 1949, having registered office at IDBI Tower, WTC Complex, Cuffe Parade, Mumbai-400005 and, inter alia, a Branch Office at TPC, Mafatlal Centre, 4th</li>
 </ol>
 <figure class="embedded-figure" data-page="6"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0006-image-1.jpeg" alt="Embedded figure from page 6" /></figure>
@@ -152,22 +231,27 @@
 <figure class="embedded-figure" data-page="7"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0007-image-1.jpeg" alt="Embedded figure from page 7" /></figure>
 <p data-page="7">these presents or the liability of the Contractor to the Corporation, and notwithstanding the existence of any instructions or purported instructions by the Contractor or any other person to the Bank not to pay or for any cause withhold or defer payment to the Corporation under these presents, with the intent that notwithstanding the existence of such difference, dispute or instruction, the Bank shall be and remain liable to make payment to the Corporation in terms thereof.” (Emphasis Supplied)</p>
 <ol class="numbered-list" start="20">
-<li>It is contended by Mr. Vashist that on reading of the bank guarantee, it would leave no room for doubt that the parties had agreed that the petitioner would provide unconditional bank guarantees. The terms of the bank guarantees are clear and explicit and as an independent contract, the respondent no. 2 bank is not concerned with the disputes between the petitioner and respondent no.1. He submits that the law is well-settled that the courts would be slow in granting stay of invocation of an unconditional bank guarantee. He relies on the judgment in the case of Hindustan Steelworks Construction Ltd. v. Tarapore &amp; Co. and Another, (1996) 5 SCC 34 (paragraphs 14 and 23) in support of his submission.</li>
+<li>It is contended by Mr. Vashist that on reading of the bank guarantee, it would leave no room for doubt that the parties had agreed that the petitioner would provide unconditional bank guarantees. The terms of the bank guarantees are clear and explicit and as an independent contract, the respondent no. 2 bank is not concerned with the disputes between the petitioner and respondent no.1. He submits that the law is well-settled that the courts would be slow in granting stay of invocation of an unconditional bank guarantee. He relies on the judgment in the case ofHindustan Steelworks Construction Ltd.v. Tarapore &amp; Co. and Another,(1996) 5 SCC 34(paragraphs 14 and 23) in support of his submission.</li>
 <li>I have heard the learned counsel for the parties and considered their rival submissions.</li>
 <li>The only ground urged before this Court is that special equities exist in favour of the petitioner entitling it to an injunction against the respondents. Mr.Jain substantiated his argument by submitting that extensions of time were granted by the respondent no.1, the amount due</li>
 </ol>
 <figure class="embedded-figure" data-page="8"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0008-image-1.jpeg" alt="Embedded figure from page 8" /></figure>
 <p data-page="8">from the petitioner has not been computed and that on the contrary, IOC owes about 900 crores to the petitioner therein.</p>
 <ol class="numbered-list" start="23">
-<li>The scope of interference by courts in the invocation of the bank guarantees is no longer res integra. It has been repeatedly held that specially in cases of unconditional bank guarantees, the court should not interfere unless the petitioner is able to establish fraud of egregious nature or is able to plead special equities. I need not burden my opinion with numerous judicial pronouncements, suffice it to reproduce the relevant paragraphs of a judgment of this very Court in CWHEC-HCIL (JV) v. Calcutta Haldia Port Road Co. Ltd. &amp; Ors., ILR (2008) 1 Del 353: “10. In light of the aforesaid discussion, the following principles governing the invocation of bank guarantees are culled out :</li>
+<li>The scope of interference by courts in the invocation of the bank guarantees is no longerres integra.It has been repeatedly held that specially in cases of unconditional bank guarantees, the court should not interfere unless the petitioner is able to establish fraud of egregious nature or is able to plead special equities. I need not burden my opinion with numerous judicial pronouncements, suffice it to reproduce the relevant paragraphs of a judgment of this very Court inCWHEC-HCIL</li>
 </ol>
-<ol class="numbered-list" type="a" start="9">
-<li>A bank guarantee is an independent and distinct contract between the bank and the beneficiary.</li>
+<h4>(JV) v.Calcutta Haldia Port Road Co. Ltd. &amp; Ors., ILR (2008) 1 Del</h4>
+<p data-page="8">353:</p>
+<ol class="numbered-list" start="10">
+<li>In light of the aforesaid discussion, the following principles governing the invocation of bank guarantees are culled out :</li>
 </ol>
-<ol class="numbered-list" type="i" start="2">
-<li>In the case of unconditional bank guarantees, the bank undertakes to give money to the beneficiary on demand, without demur or protest.</li>
-<li>Further, in unconditional bank guarantees, the nature of the obligation of the bank is absolute and not dependent upon any dispute or proceeding between the beneficiary of the bank guarantee and the party at whose instance the bank guarantee.</li>
-<li>As bank guarantees are fundamental to trade and commerce, both at the domestic and international level, the general rule is that courts of law should be slow and cautious in granting injunction to restrain their realization. For instance, courts should refrain from probing into the disputes between the parties or from embarking on questions as to whether the beneficiary is trying to take undue enrichment, etc.</li>
+<ol class="numbered-list sub-numbered-list" type="a" start="9">
+<li class="subparagraph-item"><em>A bank guarantee is an independent and distinct contract between the bank and the beneficiary.</em></li>
+</ol>
+<ol class="numbered-list sub-numbered-list" type="i" start="2">
+<li class="subparagraph-item"><em>In the case of unconditional bank guarantees, the bank undertakes to give money to the beneficiary on demand, without demur or protest.</em></li>
+<li class="subparagraph-item"><em>Further, in unconditional bank guarantees, the nature of the obligation of the bank is absolute and not dependent upon any dispute or proceeding between the beneficiary of the bank guarantee and the party at whose instance the bank guarantee.</em></li>
+<li class="subparagraph-item"><em>As bank guarantees are fundamental to trade and commerce, both at the domestic and international level, the general rule is that courts of law should be slow and cautious in granting injunction to restrain their realization. For instance, courts should refrain from probing into the disputes between the parties or from embarking on questions as to whether the beneficiary is trying to take undue enrichment, etc.</em></li>
 </ol>
 <ol class="numbered-list" type="a" start="22">
 <li>However, there are four exceptions to the aforesaid</li>
@@ -186,11 +270,20 @@
 <figure class="embedded-figure" data-page="10"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0010-image-1.jpeg" alt="Embedded figure from page 10" /></figure>
 <p data-page="10">(Emphasis Supplied)</p>
 <ol class="numbered-list" start="24">
-<li>The first question which arises for consideration is whether the two bank guarantees which are identical in nature are unconditional or not. Reading of the terms of the bank guarantee, more particularly the clauses extracted in paragraph 20 aforegoing, leave no room for doubt that the petitioner had provided unconditional bank guarantees to the respondent no.1. [See M/s Constructora Sanjose S.A. v. Delhi Development Authority &amp; Ors., 2016 SCC OnLine Del 6078]</li>
-<li>As regards, the submission of Mr.Jain that the respondent no.1 has acted as an arbiter in its own cause and decided the quantum of damages unilaterally, the question, in my view, stands fully answered in the case of Hindustan Steelworks Construction Ltd. (Supra). In the case, the appellant had granted a contract for construction of civil works in a steel plant to the contractor, which despite extensions was unable to complete the project within the stipulated time and the appellant rescinded the contract. As per the terms of the contract, the appellant assessed the loss/damages and invoked the bank guarantees. The contractor rushed before the Trial Court praying for an injunction restraining the appellant from invoking the bank guarantees to no avail and then approached the Andhra Pradesh High Court alleging that since the bank guarantees were given for securing due performance, the same would be encashable only after the arbitrators decide the factum of breach as well as the damage suffered. The High Court reversed the decision of the Trial Court finding that the liability to pay damages</li>
+<li>The first question which arises for consideration is whether the two bank guarantees which are identical in nature are unconditional or not. Reading of the terms of the bank guarantee, more particularly the clauses extracted in paragraph 20 aforegoing, leave no room for doubt that the petitioner had provided unconditional bank guarantees to the respondent no.1.</li>
 </ol>
+<h4>[SeeM/s Constructora Sanjose S.A.v.Delhi Development Authority</h4>
+<h4>&amp; Ors., 2016 SCC OnLine Del 6078]</h4>
+<ol class="numbered-list" start="25">
+<li>As regards, the submission of Mr.Jain that the respondent no.1 has acted as an arbiter in its own cause and decided the quantum of damages unilaterally, the question, in my view, stands fully answered in</li>
+</ol>
+<h4>the case ofHindustan Steelworks Construction Ltd. (Supra). In the</h4>
+<p data-page="10">case, the appellant had granted a contract for construction of civil works in a steel plant to the contractor, which despite extensions was unable to complete the project within the stipulated time and the appellant rescinded the contract. As per the terms of the contract, the appellant assessed the loss/damages and invoked the bank guarantees. The contractor rushed before the Trial Court praying for an injunction restraining the appellant from invoking the bank guarantees to no avail and then approached the Andhra Pradesh High Court alleging that since the bank guarantees were given for securing due performance, the same would be encashable only after the arbitrators decide the factum of breach as well as the damage suffered. The High Court reversed the decision of the Trial Court finding that the liability to pay damages</p>
 <figure class="embedded-figure" data-page="11"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0011-image-1.jpeg" alt="Embedded figure from page 11" /></figure>
-<p data-page="11">would arise only after it is established that there is a breach of contract and same could be ascertained by the arbitrator. This did not find favour with the Apex Court, which allowed the appeals and observed as under: “6. ...After noticing that bank guarantees in this case except Bank Guarantees Nos. 3/21, 3/39 and 6/175 were given towards security deposits only it observed that: “Neither of the learned counsels had drawn attention of this Court to any decision granting or refusing injunction in regard to a bank guarantee given by way of security deposit to indemnify against any loss or damage caused by breach of the terms and conditions of the contract.” It then considered the position of law with respect to liquidated damages in our country and observed that: “Hence there cannot be any agreement in regard to the amount that has to be allowed except the upper limit that can be fixed, in case of breach.” Relying upon the decision of this Court in Union of India v. Raman Iron Foundry [(1974) 2 SCC 231 : AIR 1974 SC 1265] the High Court held that any term in the agreement that one of the parties shall be the sole judge to quantify the same has to be held as invalid. According to the High Court liability to pay damages would arise only after it is established that there is a breach of the contract and it is for the court or the arbitrator to decide as to who has committed the breach. Till the liability is ascertained, it cannot be said that there is a “debt due or debt owing”. On these grounds the High Court rejected the contention raised on behalf of HSCL that it was the sole judge to decide as to whether the contractor has committed a breach of the contract and what is the extent of damage caused to it. It also held that in the absence of any determination by the Court or the arbitrator no amount can be said to be payable by the contractor to HSCL by way of damages and, therefore, it will be just and proper to restrain HSCL from enforcing the bank guarantees. ...”...</p>
+<p data-page="11">would arise only after it is established that there is a breach of contract and same could be ascertained by the arbitrator. This did not find favour with the Apex Court, which allowed the appeals and observed as under:</p>
+<ol class="numbered-list" start="6">
+<li>...After noticing that bank guarantees in this case except Bank Guarantees Nos. 3/21, 3/39 and 6/175 were given towards security deposits only it observed that: “Neither of the learned counsels had drawn attention of this Court to any decision granting or refusing injunction in regard to a bank guarantee given by way of security deposit to indemnify against any loss or damage caused by breach of the terms and conditions of the contract.” It then considered the position of law with respect to liquidated damages in our country and observed that: “Hence there cannot be any agreement in regard to the amount that has to be allowed except the upper limit that can be fixed, in case of breach.” Relying upon the decision of this Court in Union of India v. Raman Iron Foundry [(1974) 2 SCC 231 : AIR 1974 SC 1265] the High Court held that any term in the agreement that one of the parties shall be the sole judge to quantify the same has to be held as invalid. According to the High Court liability to pay damages would arise only after it is established that there is a breach of the contract and it is for the court or the arbitrator to decide as to who has committed the breach. Till the liability is ascertained, it cannot be said that there is a “debt due or debt owing”. On these grounds the High Court rejected the contention raised on behalf of HSCL that it was the sole judge to decide as to whether the contractor has committed a breach of the contract and what is the extent of damage caused to it. It also held that in the absence of any determination by the Court or the arbitrator no amount can be said to be payable by the contractor to HSCL by way of damages and, therefore, it will be just and proper to restrain HSCL from enforcing the bank guarantees. ...”...</li>
+</ol>
 <figure class="embedded-figure" data-page="12"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0012-image-1.jpeg" alt="Embedded figure from page 12" /></figure>
 <ol class="numbered-list" start="14">
 <li>The High Court also committed a grave error in restraining the appellant from invoking bank guarantees on the ground that in India only a reasonable amount can be awarded by way of damages even when the parties to the contract have provided for liquidated damages and that a term in a bank guarantee making the beneficiary the sole judge on the question of breach of contract and the extent of loss or damages would be invalid and that no amount can be said to be due till an adjudication in that behalf is made either by a court or an arbitrator, as the case may be. In taking that view the High Court has overlooked the correct position that a bank guarantee is an independent and distinct contract between the bank and the beneficiary and is not qualified by the underlying transaction and the primary contract between the person at whose instance the bank guarantee is given and the beneficiary. What the High Court has observed would be applicable only to the parties to the underlying transaction or the primary contract but can have no relevance to the bank guarantee given by the bank, as the transaction between the bank and the beneficiary is independent and of a different nature. In case of an unconditional bank guarantee the nature of obligation of the bank is absolute and not dependent upon any dispute or proceeding between the party at whose instance the bank guarantee is given and the beneficiary. The High Court thus failed to appreciate the real object and nature of a bank guarantee. The distinction which the High Court has drawn between a guarantee for due performance of a works contract and a guarantee given towards security deposit for that contract is also unwarranted. The said distinction appears to be the result of the same fallacy committed by the High Court of not appreciating the distinction between the primary contract between the parties and a bank guarantee and also the real object of a bank guarantee and the nature of the bank&#x27;s obligation thereunder. Whether the bank guarantee is towards security deposit or mobilisation advance or working funds or for due performance of the contract if the same is unconditional and if there is a</li>
@@ -201,15 +294,18 @@
 <li>We are, therefore, of the opinion that the correct position of law is that commitment of banks must be</li>
 </ol>
 <figure class="embedded-figure" data-page="14"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0014-image-1.jpeg" alt="Embedded figure from page 14" /></figure>
-<p data-page="14">honoured free from interference by the courts and it is only in exceptional cases, that is to say, in case of fraud or in a case where irretrievable injustice would be done if bank guarantee is allowed to be encashed, the court should interfere. In this case fraud has not been pleaded and the relief for injunction was sought by the contractor/Respondent 1 on the ground that special equities or the special circumstances of the case required it. The special circumstances and/or special equities which have been pleaded in this case are that there is a serious dispute on the question as to who has committed breach of the contract, that the contractor has a counter-claim against the appellant, that the disputes between the parties have been referred to the arbitrators and that no amount can be said to be due and payable by the contractor to the appellant till the arbitrators declare their award. In our opinion, these factors are not sufficient to make this case an exceptional case justifying interference by restraining the appellant from enforcing the bank guarantees. The High Court was, therefore, not right in restraining the appellant from enforcing the bank guarantees.” (Emphasis Supplied) (Also see Era Infra Engineering Ltd. v. Central Public Works Department and Ors., 2017 SCC OnLine Del 8349: MANU/DE/1357/2017)</p>
+<p data-page="14">honoured free from interference by the courts and it is only in exceptional cases, that is to say, in case of fraud or in a case where irretrievable injustice would be done if bank guarantee is allowed to be encashed, the court should interfere. In this case fraud has not been pleaded and the relief for injunction was sought by the contractor/Respondent 1 on the ground that special equities or the special circumstances of the case required it. The special circumstances and/or special equities which have been pleaded in this case are that there is a serious dispute on the question as to who has committed breach of the contract, that the contractor has a counter-claim against the appellant, that the disputes between the parties have been referred to the arbitrators and that no amount can be said to be due and payable by the contractor to the appellant till the arbitrators declare their award. In our opinion, these factors are not sufficient to make this case an exceptional case justifying interference by restraining the appellant from enforcing the bank guarantees. The High Court was, therefore, not right in restraining the appellant from enforcing the bank guarantees.” (Emphasis Supplied)</p>
+<h4>(Also see Era Infra Engineering Ltd.v. Central Public Works</h4>
+<h4>Department and Ors., 2017 SCC OnLine Del 8349:</h4>
+<p data-page="15">MANU/DE/1357/2017)</p>
 <ol class="numbered-list" start="26">
-<li>Hence, neither J.G. Engineers Pvt. Ltd. (Supra) nor Shree Rameshwara Rice Mills (Supra) come to the aid of the petitioner as both the judgments do not pertain to invocation of bank guarantees and relate to computation of damages between two contracting parties.</li>
+<li>Hence, neither J.G. Engineers Pvt. Ltd. (Supra)nor Shree Rameshwara Rice Mills(Supra)come to the aid of the petitioner as both the judgments do not pertain to invocation of bank guarantees and relate to computation of damages between two contracting parties.</li>
 <li>Even the other grounds urged by the learned senior counsel for the</li>
 </ol>
 <figure class="embedded-figure" data-page="15"><img src="assets/gss02062017ompicomm2322017/gss02062017ompicomm2322017-page-0015-image-1.jpeg" alt="Embedded figure from page 15" /></figure>
-<p data-page="15">petitioner fail to establish a case of special equities. The attribution of the guilt for the delay and the consequent or other claims of the petitioner can be adjudicated before the arbitral tribunal. Further, the respondent no.1 being an instrumentality of the state, there is no danger of the petitioner being unable to recover any amounts it claims should the same be awarded to it in the arbitral proceedings. I may also note that similar grounds pertaining to outstanding bills, amounts and attribution of blame for delay in execution of project were raised before this Court in CWHEC-HCIL (JV) and were rejected (paragraphs 2-4, 19, 41 and 44).</p>
+<p data-page="15">petitioner fail to establish a case of special equities. The attribution of the guilt for the delay and the consequent or other claims of the petitioner can be adjudicated before the arbitral tribunal. Further, the respondent no.1 being an instrumentality of the state, there is no danger of the petitioner being unable to recover any amounts it claims should the same be awarded to it in the arbitral proceedings. I may also note that similar grounds pertaining to outstanding bills, amounts and attribution of blame for delay in execution of project were raised before this Court inCWHEC-HCIL (JV) and were rejected (paragraphs 2-4, 19, 41 and 44).</p>
 <ol class="numbered-list" start="28">
-<li>The decision in the case of A.S. Motors Pvt. Ltd. (Supra) is also inapplicable to the facts of the present case as in that case, invocation of the bank guarantee was quashed by the High Court and upheld by the Supreme Court by finding that the respondent had already received a sum greater than the amount payable to it under the contract if the same was performed diligently till its end and hence, the additional invocation of bank guarantee without proper estimation was found to be improper; which is not the case before this Court.</li>
+<li>The decision in the case of A.S. Motors Pvt. Ltd.(Supra)is also inapplicable to the facts of the present case as in that case, invocation of the bank guarantee was quashed by the High Court and upheld by the Supreme Court by finding that the respondent had already received a sum greater than the amount payable to it under the contract if the same was performed diligently till its end and hence, the additional invocation of bank guarantee without proper estimation was found to be improper; which is not the case before this Court.</li>
 <li>In the present case, the petitioner has not been able to establish any special equities in claim or counter claim on behalf of the petitioner against a ground to stay the bank guarantee which is an independent document. Therefore, I find no grounds to stay the invocation of the two bank guarantees.</li>
 <li>Accordingly, the prayers (a), (b) and (c) of the petition under Section 9 are rejected.</li>
 <li>Issue notice to the respondents with regard to prayer (d).</li>
@@ -220,6 +316,7 @@
 <li>Parties to explore as to whether the arbitrators can be appointed expeditiously.</li>
 </ol>
 <p data-page="16">G.S.SISTANI, J. (VACATION JUDGE) JUNE 02, 2017// pst</p>
+
     </article>
   </main>
 </body>

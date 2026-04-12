@@ -40,6 +40,12 @@
     h3 {
       font-size: 1.12rem;
     }
+    h4 {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      margin-top: 0.95em;
+    }
     p {
       margin: 0.65em 0;
       text-align: justify;
@@ -49,6 +55,22 @@
       line-height: 1.45;
       margin-top: 0.5em;
     }
+    .citation-ref a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup, sub {
+      font-size: 0.72em;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup {
+      top: -0.48em;
+    }
+    sub {
+      bottom: -0.18em;
+    }
     ol, ul {
       margin: 0.65em 0 0.95em 1.5em;
       padding: 0;
@@ -56,6 +78,13 @@
     li {
       margin: 0.28em 0;
       padding-left: 0.2em;
+    }
+    .sub-numbered-list {
+      margin-left: 3rem;
+      padding-left: 0.35rem;
+    }
+    .subparagraph-item {
+      font-style: italic;
     }
     .table-wrap {
       margin: 1.15em 0 1.45em;
@@ -86,6 +115,40 @@
       border: 1px solid var(--rule);
       background: white;
     }
+    .citations {
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      break-before: page;
+      page-break-before: always;
+    }
+    .citations h2 {
+      margin-top: 0;
+    }
+    .citation-list {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+    }
+    .citation-list li {
+      display: grid;
+      grid-template-columns: minmax(2.8rem, auto) 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      margin: 0.55rem 0;
+      padding: 0;
+    }
+    .citation-marker {
+      font-weight: 700;
+    }
+    .citation-text {
+      min-width: 0;
+    }
+    .citation-backref {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.3rem;
+    }
     @media print {
       html, body {
         background: white;
@@ -105,7 +168,20 @@
 <body>
   <main>
     <article>
-<figure class="page-facsimile" data-page="1"><img src="assets/59305062023ba9922023-114459/59305062023ba9922023-114459-page-0001.png" alt="Facsimile of page 1" /></figure>
+<p data-page="1">NC No. 2023:DHC:4081 $~32</p>
+<h3>* IN THE HIGH COURT OF DELHI AT NEW DELHI</h3>
+<p data-page="1">% Reserved on: 01.06.2023 Pronounced on: 05.06.2023 + BAIL APPLN. 992/2023 SHER SINGH @ RAJ BOHARA..... Petitioner Through: Mr. Bhaskar Tripathi, Adv.</p>
+<h3>versus</h3>
+<figure class="embedded-figure" data-page="1"><img src="assets/59305062023ba9922023-114459/59305062023ba9922023-114459-page-0001-image-1.jpeg" alt="Embedded figure from page 1" /></figure>
+<p data-page="1">STATE (NCT OF DELHI)..... Respondent Through: Mr. Sanjeev Bhandari, ASC with Mr. Kunal Mittal and Mr. Saurabh Tanwar, Advs. With SI Bhagwan Singh Spl Cell / SWR CORAM:</p>
+<h3>HON&#x27;BLE MR. JUSTICE VIKAS MAHAJAN</h3>
+<h3>JUDGMENT</h3>
+<p data-page="1">VIKAS MAHAJAN, J.</p>
+<ol class="numbered-list" start="1">
+<li>The present bail application has been filed by the petitioner seeking regular bail in FIR No. 230/2020 under Sections 3/4/5 of the Official Secrets Act, 1923 &amp; Section 120-B of the IPC registered at PS Special Cell.</li>
+<li>The case of the prosecution is that inputs were received from Indian Intelligence Agency that one individual namely, Mr. Rajeev Sharma (coaccused) was receiving funds from his handler through hawala &amp; Western Union Money Transfer platform for conveying sensitive information having a bearing on National Security and foreign relations through electronic means.</li>
+</ol>
+<p data-page="1">Page1of6</p>
 <p data-page="2">NC No. 2023:DHC:4081</p>
 <ol class="numbered-list" start="3">
 <li>In connection with the said allegations, Rajeev Sharma was arrested on 14.09.2020 and thereafter on the disclosure statement of the said coaccused, the petitioner herein was also arrested on 19.09.2020 alleging that the petitioner was also a part of the conspiracy.</li>
@@ -116,6 +192,7 @@
 <ol class="numbered-list" start="5">
 <li>After the conclusion of investigation, the Final report under Section 173 of the Code of Criminal Procedure, 1973 has been filed on 28.11.2020, which was delayed by approximately 10 days. In view thereof, the other coaccused were released on default bail vide orders of this Court, however, the petitioner could not avail the same benefit.</li>
 </ol>
+<p data-page="2">Page2of6</p>
 <p data-page="3">NC No. 2023:DHC:4081</p>
 <ol class="numbered-list" start="6">
 <li>Thereafter, on 26.02.2021, the Directorate of Enforcement (ED) recorded an ECIR taking the abovementioned FIR as the scheduled offence and co-accused persons namely Rajeev Sharma and Qing Shi were arrested by the ED and thereafter, the co-accused persons were released on regular bail.</li>
@@ -125,14 +202,14 @@
 <p data-page="3">petitioner has been falsely implicated in the present matter in as much as he has not been named in the FIR. The learned counsel contends that the investigation qua the petitioner is complete and the chargesheet already stands filed and no purpose would be served by keeping the present petitioner behind bars, who has already served more than 2.5 years of incarceration.</p>
 <ol class="numbered-list" start="8">
 <li>On merits, the learned counsel for the petitioner submits that the petitioner was working as a taxi driver before he accepted the job position of office peon-cum-driver in their company, namely MZ Mall Private Ltd. As the office peon-cum-driver of the company, the role of the petitioner was to clean the office, drive a vehicle and do the work of the office as per the directions of the director of the company and the petitioner neither had any active role in the day to day affairs of the company nor understood the working of the company.</li>
-<li>In so far as the allegation against the petitioner that he had delivered about 1-2 lakhs to the co-accused Rajeev Sharma in cash, the learned counsel for the petitioner submits that the same was done under the directions of the directors of the company and without active knowledge of the contents of the package. Further, it was contended by the learned counsel for the petitioner, that no monetary gains have been derived by the petitioner NC No. 2023:DHC:4081 in the alleged conspiracy, in as much as, no money has been received by him either in his bank account or in cash. The learned counsel also urged that the other co-accused namely, Rajeev Sharma and Ms. Qing Shi were released on bail by a co-ordinate bench of this Court vide order dated 04.12.2020 passed in CRL Rev. Petition No. 363/2020 and order dated 28.07.2021 passed in CRL Rev. Petition No. 82/2021 [Annexure A-5 (Colly)],</li>
+<li>In so far as the allegation against the petitioner that he had delivered about 1-2 lakhs to the co-accused Rajeev Sharma in cash, the learned counsel for the petitioner submits that the same was done under the directions of the directors of the company and without active knowledge of the contents of the package. Further, it was contended by the learned counsel for the petitioner, that no monetary gains have been derived by the petitioner Page3of6 NC No. 2023:DHC:4081 in the alleged conspiracy, in as much as, no money has been received by him either in his bank account or in cash. The learned counsel also urged that the other co-accused namely, Rajeev Sharma and Ms. Qing Shi were released on bail by a co-ordinate bench of this Court vide order dated 04.12.2020 passed in CRL Rev. Petition No. 363/2020 and order dated 28.07.2021 passed in CRL Rev. Petition No. 82/2021 [Annexure A-5 (Colly)],</li>
 </ol>
 <figure class="embedded-figure" data-page="4"><img src="assets/59305062023ba9922023-114459/59305062023ba9922023-114459-page-0004-image-1.jpeg" alt="Embedded figure from page 4" /></figure>
 <p data-page="4">respectively. Lastly, the learned counsel submits that the petitioner is not educated and cannot read or write and taking advantage of this fact the coaccused persons have made the petitioner a director in the company having only about 0.01% shareholding in the company.</p>
 <ol class="numbered-list" start="10">
 <li>On the other hand, the learned APP appearing on behalf of the State has opposed the bail application of the petitioner on the ground that the allegations against the petitioner are grave and serious. The learned APP further submits that the petitioner had an active role in the conspiracy as the petitioner was a director in the company which was acting as a conduit to deliver cash to Rajeev Sharma.</li>
 <li>It is further submitted on behalf of the State that a report was sought from the Ministry of Defence in respect of the documents which have been recovered from the house of Rajeev Sharma, which states the recovered documents are confidential and any disclosure of the contents of the documents are prejudicial to the interests of the country.</li>
-<li>He submits that the offences committed by the petitioner affect the sovereignty and integrity of the nation and further submits that the petitioner is a citizen of Nepal and is thus at a flight risk and may skip bail. The learned APP also submits that there is a high possibility that the petitioner NC No. 2023:DHC:4081 may influence witnesses and tamper with evidence and thus should not be enlarged on bail.</li>
+<li>He submits that the offences committed by the petitioner affect the sovereignty and integrity of the nation and further submits that the petitioner is a citizen of Nepal and is thus at a flight risk and may skip bail. The learned APP also submits that there is a high possibility that the petitioner Page4of6 NC No. 2023:DHC:4081 may influence witnesses and tamper with evidence and thus should not be enlarged on bail.</li>
 <li>I have heard the learned counsel for the petitioner, as well as, the learned APP for the State.</li>
 <li>I have also perused the material on record, as well the status report filed on behalf of the State.</li>
 </ol>
@@ -142,6 +219,7 @@
 <li>At this stage, without going into the merits of the case, it is relevant to note that the co-accused persons, who are the main accused, have been released on default bail whereas the petitioner is still in custody since 19.09.2020. The petitioner could not be enlarged on default bail possibly, for the reason that the petitioner could not get proper legal assistance for the said purpose. The petitioner has also not been named in the FIR and neither any confidential document has been recovered from him. Further, the investigation is complete and no further recovery has to be made from the petitioner. It is also not the case of the prosecution that the petitioner is a habitual offender or he is involved in any other case.</li>
 <li>In view of the above, no useful purpose would be served in keeping the petitioner behind bars. Accordingly, the petitioner is admitted to bail on his furnishing a Personal Bond in the sum of Rs. 10,000/- with one surety of like amount, subject to the satisfaction of the learned Trial Court/CMM/Duty Magistrate, further subject to the following conditions:a) Petitioner/applicant shall not leave the city without prior permission of the Court.</li>
 </ol>
+<p data-page="5">Page5of6</p>
 <p data-page="6">NC No. 2023:DHC:4081 b) Petitioner/applicant shall surrender his passport, in case he possess any, to the Investigating Officer, if not already surrendered. c) Petitioner/applicant shall not change his address without prior intimation to the Investigating Officer. d) Petitioner/applicant shall appear before the Court as and when the matter is taken up for hearing.</p>
 <figure class="embedded-figure" data-page="6"><img src="assets/59305062023ba9922023-114459/59305062023ba9922023-114459-page-0006-image-1.jpeg" alt="Embedded figure from page 6" /></figure>
 <p data-page="6">e) Petitioner/applicant shall provide all mobile numbers to the Investigating Officer concerned which shall be kept in working condition at all times and shall not switch off or change the mobile number without prior intimation to the Investigating Officer concerned. The mobile location be kept on at all times. f) Petitioner/applicant shall not indulge in any criminal activity and shall not communicate with or come in contact with the witnesses or tamper with the evidence in any manner.</p>
@@ -149,11 +227,13 @@
 <li>The petition is disposed of in the above terms.</li>
 <li>Nothing stated herein shall be construed to be an expression of opinion on the merits of the case.</li>
 <li>Copy of the order be forwarded to the concerned Jail Superintendent for necessary compliance.</li>
-<li>Order dasti under the signatures of the Court Master.</li>
+<li>Orderdastiunder the signatures of the Court Master.</li>
 <li>Order be uploaded on the website of this Court.</li>
 </ol>
 <p data-page="6">VIKAS MAHAJAN, J</p>
 <p data-page="6">JUNE 05, 2023 N.S. ASWAL</p>
+<p data-page="6">Page6of6</p>
+
     </article>
   </main>
 </body>

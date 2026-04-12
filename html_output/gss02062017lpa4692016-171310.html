@@ -40,6 +40,12 @@
     h3 {
       font-size: 1.12rem;
     }
+    h4 {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      margin-top: 0.95em;
+    }
     p {
       margin: 0.65em 0;
       text-align: justify;
@@ -49,6 +55,22 @@
       line-height: 1.45;
       margin-top: 0.5em;
     }
+    .citation-ref a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup, sub {
+      font-size: 0.72em;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup {
+      top: -0.48em;
+    }
+    sub {
+      bottom: -0.18em;
+    }
     ol, ul {
       margin: 0.65em 0 0.95em 1.5em;
       padding: 0;
@@ -56,6 +78,13 @@
     li {
       margin: 0.28em 0;
       padding-left: 0.2em;
+    }
+    .sub-numbered-list {
+      margin-left: 3rem;
+      padding-left: 0.35rem;
+    }
+    .subparagraph-item {
+      font-style: italic;
     }
     .table-wrap {
       margin: 1.15em 0 1.45em;
@@ -86,6 +115,40 @@
       border: 1px solid var(--rule);
       background: white;
     }
+    .citations {
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      break-before: page;
+      page-break-before: always;
+    }
+    .citations h2 {
+      margin-top: 0;
+    }
+    .citation-list {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+    }
+    .citation-list li {
+      display: grid;
+      grid-template-columns: minmax(2.8rem, auto) 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      margin: 0.55rem 0;
+      padding: 0;
+    }
+    .citation-marker {
+      font-weight: 700;
+    }
+    .citation-text {
+      min-width: 0;
+    }
+    .citation-backref {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.3rem;
+    }
     @media print {
       html, body {
         background: white;
@@ -105,11 +168,39 @@
 <body>
   <main>
     <article>
-<figure class="page-facsimile" data-page="1"><img src="assets/gss02062017lpa4692016-171310/gss02062017lpa4692016-171310-page-0001.png" alt="Facsimile of page 1" /></figure>
-<figure class="page-facsimile" data-page="2"><img src="assets/gss02062017lpa4692016-171310/gss02062017lpa4692016-171310-page-0002.png" alt="Facsimile of page 2" /></figure>
-<figure class="page-facsimile" data-page="3"><img src="assets/gss02062017lpa4692016-171310/gss02062017lpa4692016-171310-page-0003.png" alt="Facsimile of page 3" /></figure>
-<p data-page="4">r</p>
-<p data-page="4">LPA No. 474/2016, CM No. 31246/2016 in LPA No. 477/2016 &amp; CM No.31249/2016 in LPA No. 478/2016 Dismissed as infructous. G.S.SISTANI, J (VACATION JUDGE) VINOD GOEL,J (VACATION JUDGE) JUNE 02, 2017/P i LPA 469/2016 etc. &#x27;)c&lt;^ iz Sis)n (j^</p>
+<p data-page="1">$-14to19 * INTHEHIGHCOURTOFDELHIATNEWDELHI + LPA469/2016 DINESHKUMAR Appellant Through: Mr.KirtiUppal,Sr.Adv.with Ms.AasthaDhawanandMs.GauriP. Desai,Advs.</p>
+<h3>versus</h3>
+<p data-page="1">NEWDELHIMUNICIPALCOUNCIL&amp;ORS Respondents Through: Mr.HarshaPeechara,Addl.Standing</p>
+<h4>Counsel,NDMC</h4>
+<p data-page="1">Mr.DeveshSingh,ASC(Civil)GNCTD withMs.NeelamKholia,Adv.forR-3, (GNCTD)andPolice</p>
+<p data-page="1">+ LPA472/2016 KISHANLAL Appellant Through Mr.KirtiUppal,Sr.Adv.with Ms.AasthaDhawanandMs.GauriP. Desai,Advs.</p>
+<h3>versus</h3>
+<p data-page="1">NEWDELHIMUNICIPALCOUNCIL&amp;ORS Respondents Through: Mr.HarshaPeechara,Addl.Standing</p>
+<h4>Counsel,NDMC</h4>
+<p data-page="1">+ LPA473/2016 MOHDKHURSID Appellant Through Mr.KirtiUppal,Sr.Adv.with Ms.AasthaDhawanandMs.GauriP. Desai,Advs.</p>
+<h3>versus</h3>
+<p data-page="1">NEWDELHIMUNICIPALCORPORATION&amp;ORS Respondents</p>
+<h4>Through: Mr.HarshaPeechara,Addl.Standing</h4>
+<h4>Counsel,NDMC</h4>
+<p data-page="2">+ LPA474/2016 Appellant KULDEEPSINGH Through Mr.KirtiUppal,Sr.Adv.with Ms.AasthaDhawanandMs.GauriP. Desai,Advs.</p>
+<h3>versus</h3>
+<p data-page="2">NEWDELHIMUNICIPALCOUNCIL&amp;ORS Respondents Through: Mr.HarshaPeechara,Addl.Standing</p>
+<h4>Counsel,NDMC</h4>
+<p data-page="2">Mr.SunilMalhotraandMr.Rajat Malhotra,Advs.forR-3(GNCTD)</p>
+<p data-page="2">+ LPA477/2016 Appellant SANJAYKUMARGUPTA Through Mr.KirtiUppal,Sr.Adv.with Ms.AasthaDhawanandMs.GauriP. Desai,Advs.</p>
+<h3>versus</h3>
+<p data-page="2">NEWDELHIMUNICIPALCORPORATION&amp;ANR Respondents Through: Mr.HarshaPeechara,Addl.Standing</p>
+<h4>Counsel,NDMC</h4>
+<p data-page="2">Mr.DeveshSingh,ASC(Civil)GNCTD withMs.NeelamKholia,Adv.forR-3 (GNCTD)andPolice</p>
+<p data-page="2">+ LPA478/2016 Appellant GANPATRAI Through Mr.KirtiUppal,Sr.Adv.with Ms.AasthaDhawanandMs.GauriP. Desai,Advs.</p>
+<h3>versus</h3>
+<p data-page="2">NEWDELHIMUNICIPALCOUNCIL&amp;ORS Respondents</p>
+<h4>Through: Mr.HarshaPeechara,Addl.Standing</h4>
+<h4>Counsel,NDMC</h4>
+<p data-page="2">Mr.SunilMalhotraandMr.Rajat Malhotra,Advs.forR-3(GNCTD)</p>
+<p data-page="3">CORAM: HON&#x27;BLEMR.JUSTICEG.S.SISTANI HON&#x27;BLEMR.JUSTICEVINODGOEL</p>
+<p data-page="3">% 02.06.2017 J Alltheappellantshadagreedtoacceptthealternatesitesbeingofferedby theNDMCbuthadraisedagrievancethattheareaisnotfitforuse.Timewas soughtbytheNDMCtomaketheareafitforuse.On31.05.2017,thisCourthad visitedtheLaxmiBaiNagarmarketinthepresenceofcounselsforsomeofthe parties.Areawasinspected.Tharasarereadyforuse.Wewerealsoinformedat thetimeofinspectionthatconcreteslabswouldbepreparedintheopenarea whichwouldaccommodatefurtherstreetvendors.Wearealsoinformedtoday bylearnedstandingcounselthatallotmentletterswouldbeissuedby05.06.2017 to45streetvendorsincludingthepetitionersherein.Wearealsoinformedthat thefurtherdevelopmentworkofmakingofconcreteslabswouldbecompleted withinaperiodoftwomonthsandinall about85personswouldbe accommodated..ThelearnedcounselforNDMCfurthersubmitsthatafterthe allotmentlettersarehandedover,adateforopeningofthemarketwouldbe h fixed.Duepublicitywouldbegiven.Propersignboardswouldbeerectedandif possible,evenasmallculturalprogrammewillbeheldsothatgeneralpublicis attractedtothismarketandtomaketheventuresuccessful.Wehopethatthe NDMCwouldcomplywiththetimelinetoenablethestreetvendorsto commencetheirvendingactivitiesassoonaspossible. Withtheseobservationsandwiththeconsentoftheparties,theappeals aredisposedof. r LPANo.474/2016,CMNo.31246/2016inLPANo.477/2016&amp;CM No.31249/2016inLPANo.478/2016 Dismissedasinfructous. G.S.SISTANI,J (VACATIONJUDGE) VINODGOEL,J (VACATIONJUDGE) JUNE02,2017/P i LPA469/2016etc. &#x27;)c&lt;^izSis)n(j^</p>
+
     </article>
   </main>
 </body>

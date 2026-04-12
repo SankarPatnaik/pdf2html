@@ -40,6 +40,12 @@
     h3 {
       font-size: 1.12rem;
     }
+    h4 {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      margin-top: 0.95em;
+    }
     p {
       margin: 0.65em 0;
       text-align: justify;
@@ -49,6 +55,22 @@
       line-height: 1.45;
       margin-top: 0.5em;
     }
+    .citation-ref a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup, sub {
+      font-size: 0.72em;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup {
+      top: -0.48em;
+    }
+    sub {
+      bottom: -0.18em;
+    }
     ol, ul {
       margin: 0.65em 0 0.95em 1.5em;
       padding: 0;
@@ -56,6 +78,13 @@
     li {
       margin: 0.28em 0;
       padding-left: 0.2em;
+    }
+    .sub-numbered-list {
+      margin-left: 3rem;
+      padding-left: 0.35rem;
+    }
+    .subparagraph-item {
+      font-style: italic;
     }
     .table-wrap {
       margin: 1.15em 0 1.45em;
@@ -85,6 +114,40 @@
       height: auto;
       border: 1px solid var(--rule);
       background: white;
+    }
+    .citations {
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      break-before: page;
+      page-break-before: always;
+    }
+    .citations h2 {
+      margin-top: 0;
+    }
+    .citation-list {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+    }
+    .citation-list li {
+      display: grid;
+      grid-template-columns: minmax(2.8rem, auto) 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      margin: 0.55rem 0;
+      padding: 0;
+    }
+    .citation-marker {
+      font-weight: 700;
+    }
+    .citation-text {
+      min-width: 0;
+    }
+    .citation-backref {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.3rem;
     }
     @media print {
       html, body {
@@ -116,8 +179,8 @@
 <li>The sophisticated processes of a criminal trial certainly require competent legal service to present a party’s case. If an accused person, for any particular reason, is virtually deprived of this facility, an essential aid to fair trial fails. If in a certain Court the whole Bar, for reasons of hostility or otherwise refuses to defend an accused person-an extraordinary situation difficult to imagine, having regard to the ethics of the profession-it may well be put forward as a ground which merits the attention of the Supreme Court. Glib allegation like the services of an efficient advocate may not be easy to procure involves a reflection on the members of the Bar in Bombay and, therefore, is cannot be easily accepted without incontestible testimony in that behalf which is absent in this case. apart from the ipse dixit of the party; Popular frenzy or official wrath shall not deter a member of the Bar from offering his services to those who wear unpopular names or unpalatable causes and the Indian advocate may not fail this standard. [381C-E]</li>
 <li>It is true that a detached atmosphere of a fair and impartial judicial trial is a must. The tendency of toughs and street roughs to violate the serenity of Court is obstructive of the course of justice and must surely be stamped out. Likewise, the safety of the person of an accused or complainant is an essential condition for participation in a trial and where that is put in peril by commotion, tumult or threat on account of pathological conditions prevalent in a particular venue, the request for a transfer may not be dismissed summarily. It causes disquiet and concern to a Court of justice if a person seeking justice is unable to appear present one’s case, bring one’s witnesses or adduce evidence. Indeed, it is the duty of the Court to assure propitious conditions which conduce to comparative tranquility at the trial. Turbulent conditions putting the accused’s life in danger or creating chaos inside the Court hall may jettison public justice. If this vice is peculiar to a particular place and is persistent the transfer of the case from that place may become necessary. Likewise, if there is general consternation or atmosphere of tension or raging masses of people in the entire region taking sides land polluting the climate, vitiating the necessary neutrality to hold a detached judicial trial, the situation may be said to have deteriorated to such an extent as to warrant transfer. [381 H, 382A-C] In the instant case, none of the allegations made by the Petitioner. read in the pragmatic light of the counter averments of the respondent and understood realistically makes the contention credible that a fair trial is impossible. [383A-B] G. X. Francis v. Banke Bihari Singh, A.I.R. 1958 SC 809 and 810; referred to. Observation : The frequency of mobbing manouvres in Court precincts is a bad omen for social justice in its wider connotation. Mob action may throw out of the gear the wheels of the judicial process. Engineered fury may paralyse a party’s ability to present his case or participate in the trial. If the justice system grinds to a halt through physical manouvres or sound and fury of the senseless populace, the rule of law runs aground. Even the most hated human anethema has a right to be heard without the rage of ruffians or huff of toughs being turned against him to unnerve him as party or witness or advocate. Physical violence to a party, actual or imminent, is reprehensible when he seeks justice before a tribunal. Manageable solutions must not sweep the Supreme Court off its feet into granting an easy transfer but uncontrollable or perilous deterioration will surely persuade this Court to shift the venue. It depends. [383D-F] Therefore (a) the trial Court should readily consider the liberal exercise of its power to grant for the accused exemption from personal appearance save on crucial occasions. [383G]</li>
 </ol>
-<ol class="numbered-list" type="a" start="2">
-<li>Where tranquil Court justice is a casualty, the collapse of an constitutional order is an inevitability. The Magistrate is the master of the orderly conduct of court proceedings and his authority shall not hang limp if his business is stalled by brow-beating. It is his duty to clear the Court of confusion, yelling and nerve-racking gestures which mar the serious tone of judicial heaving. The officials whose duty is to keep the public peace shall, on requisition, be at the command of the Court to help it run its process smoothly. When the situation gets out of hand the remedy of transfer surgery may be prescribed Every fleeting rumpus should not lead to a removal of the ease as it may prove to be a frequent surrender of justice to commotion. The Magistrate shall take measures to enforce conditions where the Court functions free and fair and agitational our muscle tactics yield no dividends. [384A-C]</li>
+<ol class="numbered-list sub-numbered-list" type="a" start="2">
+<li class="subparagraph-item"><em>Where tranquil Court justice is a casualty, the collapse of an constitutional order is an inevitability. The Magistrate is the master of the orderly conduct of court proceedings and his authority shall not hang limp if his business is stalled by brow-beating. It is his duty to clear the Court of confusion, yelling and nerve-racking gestures which mar the serious tone of judicial heaving. The officials whose duty is to keep the public peace shall, on requisition, be at the command of the Court to help it run its process smoothly. When the situation gets out of hand the remedy of transfer surgery may be prescribed Every fleeting rumpus should not lead to a removal of the ease as it may prove to be a frequent surrender of justice to commotion. The Magistrate shall take measures to enforce conditions where the Court functions free and fair and agitational our muscle tactics yield no dividends. [384A-C]</em></li>
 </ol>
 <h3>JUDGMENT:</h3>
 <p data-page="3">CRIMINAL ORIGINAL JURISDICTION: Transfer Petition No. 96 of 1978. Madan Bhatia and D. Gobardhan for the Petitioner. V. M. Tarkunde and Mrs. K. Hingorani for the Respondent. The Judgment of the Court was delivered by KRISHNA IYER, J.- Mrs. Maneka Gandhi figures as an accused a prosecution launched against her and others by Miss. Rani Jethmalani for an offence of defamation in the Court of the Metropolitan Magistrate, Bombay. The former is the editor of a monthly called &quot;Surya&quot; and is the wife of Shri Sanjay Gandhi and daughter-in-law of Smt. Indira Gandhi, former Prime Minister. The latter is a young advocate and is the daughter of a leading advocate and currently an important Member of Parliament. The present petition has been made for a transfer of the criminal case from Bombay to Delhi, and a string of grounds has been set out to validate the prayer. We decline the transfer and proceed to give our reasons without making the least reflection on the merits of the case. Assurance of a fair trial is the first imperative of the dispensation of justice and the central criterion for the court to consider when a motion for transfer is made is not the hypersensitivity or relative convenience of a party or easy availability of legal services or like minigrievances. Something more substantial, more compelling, more imperilling, from the point of view of public justice and its attendant environment, is necessitous if the Court is to exercise its power of transfer. This is the cardinal principle although the circumstances may. be myriad and vary from case to case. We have to test the petitioner’s grounds on this touch-stone bearing in mind the rule that normally the complainant has the right to choose any court having jurisdiction and the accused cannot dictate where the case against him should be tried. Even so, the process of justice should not harass the parties and from that angle the court may weigh the circumstances.</p>
@@ -125,6 +188,7 @@
 <ol class="numbered-list" start="1">
 <li>G.X. Francis v. Banke Bihari Singh, A.I.R. 1958 S.C. 809 at 810. for the victim. This is a far cry from saying that the peace inside the court has broken down, that calm inside the court is beyond restoration, that a tranquil atmosphere for holding the trial is beyond accomplishment or that operational freedom for the Judge parties, advocates and witnesses has ceased to exist. None of the allegations made by the petitioner, read in the pragmatic light of the counter-averments of the respondent and understood realistically, makes the contention of the counsel credible that a fair trial is impossible. Perhaps, there was some rough weather but it subsided, and it was a storm in the tea cup or transcient tension to exaggerate which is unwarranted. The petitioner’s case of great insecurity or molestation to the point of threat to life is, so far as the record bears out, difficult to accept. The mere word of an interested party is insufficient to convince us that she is in jeopardy or the court may not be able to conduct the case under conditions of detachment, neutrality or uninterrupted progress. We are disinclined to stampede ourselves into conceding a transfer of the case on this score, as things stand now. Nevertheless, we cannot view with unconcern the potentiality of a flare-up and the challenge to a fair trial, in the sense of a satisfactory participation by the accused in the proceedings against her. Mob action may throw out of gear the wheels of the judicial process. Engineered fury may paralyse a party’s ability to present his case or participate in the trial. If the justice system grinds to a halt through physical manoeuvres or sound and fury of the senseless populace the rule of E law runs aground. Even the most hated human anathema has a right to be heard without the rage of ruffians or huff or toughs being turned against him to unnerve him as party or witness or advocate. Physical violence to a party, actual or imminent, is reprehensible when he seeks justice before a tribual. Manageable solutions must not sweep this Court off its feet into granting an easy transfer but uncontrollable or perilous deterioration will surely persuade us to shift the venue. It depends. The frequency of mobbing manouvres in court precincts is a bad omen for social justice in its wider connotation. We, therefore, think it necessary to make a few cautionary observations which will be sufficient, as we see at present, to protect the petitioner and ensure for her a fair trial. The trial court should readily consider the liberal exercise of its power to grant for the accused exemption from personal appearance save on crucial occasions. Shri Tarkunde, for the respondent fairly agreed that it was the right thing to do and explained the special reason for its first rejection. If the application is again made, the magistrate will deal with it as we have indicated. This will remove much of the unsavoury sensationalism which the hearing may suffer from The magistrate is the master of the orderly conduct of court proceedings and his authority shall not hang limp if his business is stalled by brow-beating. It is his duty to clear the court of confusion, yelling and nerve-racking gestures which mar the serious tone of judicial hearing. The officials whose duty is to keep the public peace shall, on requisition, be at the command of the court to help it run its process smoothly. When the situation gets out of hand the remedy of transfer surgery may be prescribed. Every fleeting rumpus should not lead. to a removal of the case as it may prove to be a frequent surrender of justice to commotion. The magistrate shall take measures to enforce conditions where the court function free and fair and agitational or muscle tactics yield no dividends. If that fails, the parties have freedom to renew their motion under s. 406 of the Criminal Procedure Code. For, where tranquil court justice is a casualty the collapse of our constitutional order is an inevitability. We dismiss, for the nonce, this transfer petition. S.R. Petition dismissed.</li>
 </ol>
+
     </article>
   </main>
 </body>

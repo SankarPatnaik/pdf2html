@@ -40,6 +40,12 @@
     h3 {
       font-size: 1.12rem;
     }
+    h4 {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      margin-top: 0.95em;
+    }
     p {
       margin: 0.65em 0;
       text-align: justify;
@@ -49,6 +55,22 @@
       line-height: 1.45;
       margin-top: 0.5em;
     }
+    .citation-ref a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup, sub {
+      font-size: 0.72em;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup {
+      top: -0.48em;
+    }
+    sub {
+      bottom: -0.18em;
+    }
     ol, ul {
       margin: 0.65em 0 0.95em 1.5em;
       padding: 0;
@@ -56,6 +78,13 @@
     li {
       margin: 0.28em 0;
       padding-left: 0.2em;
+    }
+    .sub-numbered-list {
+      margin-left: 3rem;
+      padding-left: 0.35rem;
+    }
+    .subparagraph-item {
+      font-style: italic;
     }
     .table-wrap {
       margin: 1.15em 0 1.45em;
@@ -86,6 +115,40 @@
       border: 1px solid var(--rule);
       background: white;
     }
+    .citations {
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      break-before: page;
+      page-break-before: always;
+    }
+    .citations h2 {
+      margin-top: 0;
+    }
+    .citation-list {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+    }
+    .citation-list li {
+      display: grid;
+      grid-template-columns: minmax(2.8rem, auto) 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      margin: 0.55rem 0;
+      padding: 0;
+    }
+    .citation-marker {
+      font-weight: 700;
+    }
+    .citation-text {
+      min-width: 0;
+    }
+    .citation-backref {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.3rem;
+    }
     @media print {
       html, body {
         background: white;
@@ -105,12 +168,26 @@
 <body>
   <main>
     <article>
-<figure class="page-facsimile" data-page="1"><img src="assets/bda26022014lpa1742014/bda26022014lpa1742014-page-0001.png" alt="Facsimile of page 1" /></figure>
-<p data-page="2">the Medical Council of India recommended the return of the Scheme submitted by the appellant for starting Post Graduate Courses in the following disciplines:- “1. MD (Anaesthesia)</p>
-<ol class="numbered-list" start="2">
-<li>MD (General Medicine)</li>
-<li>MS (General Surgery)</li>
-<li>MS (ENT)</li>
+<h3>THE HIGH COURT OF DELHI AT NEW DELHI</h3>
+<p data-page="1">% Judgment delivered on: 26.02.2014</p>
+<p data-page="1">+ LPA 174/2014 &amp; CM Nos. 3416-17/2014 SATHYA SAI MEDICAL COLLEGE &amp; RESEARCH INSTITUTE.... Appellant</p>
+<h3>versus</h3>
+<p data-page="1">UNION OF INDIA &amp; ANR..... Respondents</p>
+<figure class="embedded-figure" data-page="1"><img src="assets/bda26022014lpa1742014/bda26022014lpa1742014-page-0001-image-1.jpeg" alt="Embedded figure from page 1" /></figure>
+<p data-page="1">Advocates who appeared in this case: For the Appellant: Mr Dhruv Mehta, Senior Advocate with Mr Neeraj Shekhar For the Respondent : Mr Neeraj Chaudhari and Mr Ravjyot Singh, for UOI Mr T. Singhdev and Mohd. Ali, Advocates for MCI CORAM:-</p>
+<h3>HON&#x27;BLE MR. JUSTICE BADAR DURREZ AHMED,</h3>
+<h3>ACTING CHIEF JUSTICE</h3>
+<h3>HON&#x27;BLE MR. JUSTICE SIDDHARTH MRIDUL</h3>
+<h3>JUDGMENT</h3>
+<h3>BADAR DURREZ AHMED, ACJ (ORAL)</h3>
+<ol class="numbered-list" start="1">
+<li>This appeal is directed against the order dated 05.02.2014 passed by a learned Single Judge of this court in W.P.(C) No. 854/2014 whereby the appellant’s writ petition was dismissed. The appellant / petitioner had filed the said writ petition being aggrieved by the letter dated 15.01.2014 which had been issued by the Medical Council of India and had been sent to the Secretary, Ministry of Health &amp; Family Welfare, Nirman Bhawan, New Delhi (i.e., The Central Government). By virtue of the said letter the Medical Council of India recommended the return of the Scheme submitted by the appellant for starting Post Graduate Courses in the following disciplines:-</li>
+</ol>
+<ol class="numbered-list sub-numbered-list" start="1">
+<li class="subparagraph-item"><em>MD (Anaesthesia)</em></li>
+<li class="subparagraph-item"><em>MD (General Medicine)</em></li>
+<li class="subparagraph-item"><em>MS (General Surgery)</em></li>
+<li class="subparagraph-item"><em>MS (ENT)</em></li>
 </ol>
 <figure class="embedded-figure" data-page="2"><img src="assets/bda26022014lpa1742014/bda26022014lpa1742014-page-0002-image-1.jpeg" alt="Embedded figure from page 2" /></figure>
 <ol class="numbered-list" start="5">
@@ -122,14 +199,15 @@
 <li>MD (Paediatrics)</li>
 <li>MD (Radiology)”</li>
 </ol>
-<ol class="numbered-list" start="2">
-<li>We find that the learned Single Judge in the impugned order in the very first paragraph has noted that the MCI had refused to grant recommendation to the petitioner - college for starting Post Graduate Medical Courses in the above mentioned 11 specialties under Section 10A of the India Medical Council Act, 1956 for the Academic Session 2014-15 on the specific ground that its “MBBS Course is not yet recognized by the Council”.</li>
-<li>The learned counsel for the appellant points out that by virtue of the Notification dated 27.11.2013 issued under Section 11 of the said Act, the MBBS Courses for the Academic Sessions beginning 2008-09 upto 2012-13 have been recognized. It is only in respect of the Academic Session 2013-14 that the MBBS Course has not been recognized by virtue of the letter dated 17.10.2013 which was the subject matter of a writ petition filed in the Supreme Court but which had been withdrawn in view of the fact that the Academic Session had already gone.</li>
-<li>The learned counsel appearing on behalf of the Union of India submitted that, in fact, the writ petition was pre-mature in view of the provisions of Section 10A(4) of the Indian Medical Council Act, 1956</li>
+<ol class="numbered-list sub-numbered-list" start="2">
+<li class="subparagraph-item"><em>We find that the learned Single Judge in the impugned order in the very first paragraph has noted that the MCI had refused to grant recommendation to the petitioner - college for starting Post Graduate Medical Courses in the above mentioned 11 specialties under Section 10A of the India Medical Council Act, 1956 for the Academic Session 2014-15 on the specific ground that its “MBBS Course is not yet recognized by the Council”.</em></li>
+<li class="subparagraph-item"><em>The learned counsel for the appellant points out that by virtue of the Notification dated 27.11.2013 issued under Section 11 of the said Act, the MBBS Courses for the Academic Sessions beginning 2008-09 upto 2012-13 have been recognized. It is only in respect of the Academic Session 2013-14 that the MBBS Course has not been recognized by virtue of the letter dated 17.10.2013 which was the subject matter of a writ petition filed in the Supreme Court but which had been withdrawn in view of the fact that the Academic Session had already gone.</em></li>
+<li class="subparagraph-item"><em>The learned counsel appearing on behalf of the Union of India submitted that, in fact, the writ petition was pre-mature in view of the provisions of Section 10A(4) of the Indian Medical Council Act, 1956</em></li>
 </ol>
 <figure class="embedded-figure" data-page="3"><img src="assets/bda26022014lpa1742014/bda26022014lpa1742014-page-0003-image-1.jpeg" alt="Embedded figure from page 3" /></figure>
-<p data-page="3">which reads as under:- “4. The Central Government may, after considering the scheme and the recommendations of the Council under sub-section (3) and after obtaining, where necessary, such other particulars as may be considered necessary by it from the person or college concerned, and having regard to the factors referred to in sub-section (7), either approve (with such conditions, if any, as it may consider necessary) or disapprove the scheme and any such approval shall be a permission under subsection (1): Provided that no scheme shall be disapproved by the Central Government except after giving the person or college concerned a reasonable opportunity of being heard: Provided further that nothing in this sub section shall prevent any person or medical college whose scheme has not been approved by the Central Government to submit a fresh scheme and the provisions of this section shall apply to such scheme, as if such scheme has been submitted for the first time under sub-section (2).”</p>
-<ol class="numbered-list" start="5">
+<p data-page="3">which reads as under:-</p>
+<ol class="numbered-list" start="4">
+<li>The Central Government may, after considering the scheme and the recommendations of the Council under sub-section (3) and after obtaining, where necessary, such other particulars as may be considered necessary by it from the person or college concerned, and having regard to the factors referred to in sub-section (7), either approve (with such conditions, if any, as it may consider necessary) or disapprove the scheme and any such approval shall be a permission under subsection (1): Provided that no scheme shall be disapproved by the Central Government except after giving the person or college concerned a reasonable opportunity of being heard: Provided further that nothing in this sub section shall prevent any person or medical college whose scheme has not been approved by the Central Government to submit a fresh scheme and the provisions of this section shall apply to such scheme, as if such scheme has been submitted for the first time under sub-section (2).”</li>
 <li>He further submitted that for the purposes of granting an opportunity of being heard to the colleges, such as the appellant, as required under Section 10A(4) of the said Act, the Central Government has constituted a Committee by virtue of an office order dated 18.02.2014. The said office order reads as under:- “No.U.12012/7/2014- ME (P.II) Government of India Ministry of Health &amp; Family Welfare (Department of Health and Family Welfare)</li>
 </ol>
 <figure class="embedded-figure" data-page="4"><img src="assets/bda26022014lpa1742014/bda26022014lpa1742014-page-0004-image-1.jpeg" alt="Embedded figure from page 4" /></figure>
@@ -154,6 +232,7 @@
 <p data-page="6">BADAR DURREZ AHMED, ACJ</p>
 <h3>SIDDHARTH MRIDUL, J</h3>
 <p data-page="6">FEBRUARY 26, 2014 SU</p>
+
     </article>
   </main>
 </body>
