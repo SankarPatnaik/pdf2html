@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import html
 import io
 import re
@@ -23,9 +24,12 @@ ASSET_DIR = OUTPUT_DIR / "assets"
 
 PAGE_FACSIMILE_TEXT_THRESHOLD = 80
 INLINE_FIGURE_AREA_RATIO = 0.02
+BACKGROUND_IMAGE_AREA_RATIO = 0.65
 EDGE_BAND_RATIO = 0.08
 MARGIN_BAND_RATIO = 0.12
 MARGIN_NUMBER_WIDTH = 48.0
+FOOTNOTE_REGION_START = 0.82
+FOOTNOTE_FONT_RATIO = 0.88
 
 NBSP_CHARS = {
     "\u00a0": " ",
@@ -39,14 +43,19 @@ NOISE_PATTERNS = [
     re.compile(r"^page\s+\d+(\s+of\s+\d+)?$", re.I),
     re.compile(r"^p\s+a\s+g\s+e\s+\d+(\s+of\s+\d+)?$", re.I),
     re.compile(r"^\d+$"),
+    re.compile(r"^\d{4}\s+insc\s+\d+$", re.I),
+    re.compile(r"^\d{4}:dhc:[\w-]+$", re.I),
     re.compile(r"^signature not verified$", re.I),
     re.compile(r"^digitally signed by$", re.I),
     re.compile(r"^reason:?$", re.I),
     re.compile(r"^date:?$", re.I),
 ]
 
-ORDERED_MARKER_RE = re.compile(r"^\(?((?:\d{1,4})|(?:[IVXLCDM]{1,8})|(?:[A-Za-z]))([\.\)])(?:\s+|$)(.*)$")
+ORDERED_MARKER_RE = re.compile(r"^\(?((?:\d{1,3})|(?:[IVXLCDMivxlcdm]{1,8})|(?:[A-Za-z]))([\.\)])(?:\s+|$)(.*)$")
 BULLET_MARKER_RE = re.compile(r"^[\u2022\uf0b7\-]\s+(.*)$")
+TOC_TITLE_RE = re.compile(r"^(index|contents|table of contents)$", re.I)
+TOC_ENTRY_RE = re.compile(r"^(?:[A-Z]\.(?:\d+)?|[IVXLCDM]+\.)\s+\S")
+TOC_DOT_LEADER_RE = re.compile(r"^.{4,}\.{5,}\s*\d+\s*$")
 CONNECTOR_RE = re.compile(
     r"^(and|or|but|for|nor|yet|so|because|however|therefore|thus|further|furthermore|"
     r"moreover|provided|whereas|which|who|whom|whose|that|this|these|those|the|a|an|"
@@ -220,6 +229,11 @@ def is_noise_line(text: str, bbox: tuple[float, float, float, float], page_num: 
         return True
     if re.search(r"\bpage\s+\d+\s+of\s+\d+\b", cleaned, re.I):
         return True
+    if bbox[3] <= page_height * 0.12:
+        if cleaned in {"(D)", "(D", "(d)", "(d)"}:
+            return True
+        if len(cleaned) <= 20 and any(char in cleaned for char in "$~#%+*") and not re.search(r"[a-z]{2,}", cleaned):
+            return True
 
     for pattern in NOISE_PATTERNS:
         if pattern.fullmatch(cleaned):
@@ -249,6 +263,27 @@ def bbox_within(inner: tuple[float, float, float, float], outer: tuple[float, fl
     )
 
 
+def spans_to_text(spans: list[dict]) -> str:
+    parts: list[str] = []
+    previous_bbox: tuple[float, float, float, float] | None = None
+    for span in spans:
+        text = span.get("text", "")
+        if not text:
+            continue
+        bbox = tuple(span.get("bbox", (0.0, 0.0, 0.0, 0.0)))
+        if parts and previous_bbox is not None:
+            gap = bbox[0] - previous_bbox[2]
+            if (
+                gap >= 1.5
+                and not parts[-1].endswith((" ", "-", "/", "(", "[", "{"))
+                and not text.startswith((",", ".", ";", ":", ")", "]", "}"))
+            ):
+                parts.append(" ")
+        parts.append(text)
+        previous_bbox = bbox
+    return "".join(parts)
+
+
 def parse_ordered_marker(text: str) -> tuple[str, int, str] | None:
     match = ORDERED_MARKER_RE.match(text)
     if not match:
@@ -261,14 +296,10 @@ def parse_ordered_marker(text: str) -> tuple[str, int, str] | None:
     if not text.startswith("("):
         return None
     if len(token) == 1 and token.isalpha():
-        if not token.islower():
-            return None
         style = "upper-alpha" if token.isupper() else "lower-alpha"
         return style, alpha_to_int(token), remainder
     roman = roman_to_int(token)
     if roman:
-        if token != token.lower():
-            return None
         style = "upper-roman" if token.isupper() else "lower-roman"
         return style, roman, remainder
     return None
@@ -306,7 +337,7 @@ def starts_like_continuation(text: str) -> bool:
 
 
 def ends_sentence(text: str) -> bool:
-    return bool(re.search(r"[.!?\"”']\s*$", text))
+    return bool(re.search(r"[.!?\"'”’‖»]\s*$", text))
 
 
 def join_text(left: str, right: str) -> str:
@@ -375,8 +406,10 @@ def is_heading_line(line: TextLine, median_font: float, page_width: float) -> bo
     if ORDERED_MARKER_RE.match(text) or BULLET_MARKER_RE.match(text):
         return False
 
+    centered = abs(((line.x0 + line.x1) / 2) - (page_width / 2)) <= page_width * 0.16
+    larger = line.font_size >= median_font * 1.15
     normalized = re.sub(r"[^A-Za-z ]+", "", text).strip().upper()
-    if normalized in HEADING_KEYWORDS:
+    if normalized in HEADING_KEYWORDS and (text.strip() == text.strip().upper() or centered or line.bold or larger):
         return True
 
     letters = [char for char in text if char.isalpha()]
@@ -384,8 +417,6 @@ def is_heading_line(line: TextLine, median_font: float, page_width: float) -> bo
         return False
 
     caps_ratio = sum(char.isupper() for char in letters) / len(letters)
-    centered = abs(((line.x0 + line.x1) / 2) - (page_width / 2)) <= page_width * 0.16
-    larger = line.font_size >= median_font * 1.15
     short = len(text.split()) <= 14
 
     if short and centered and len(text.split()) >= 2 and caps_ratio >= 0.8 and (larger or line.bold):
@@ -446,6 +477,17 @@ def table_to_html(rows: list[list[str | None]]) -> str:
     if not cleaned_rows:
         return ""
 
+    # Drop orphan continuation rows that only carry a wrapped fragment from a previous page row.
+    while len(cleaned_rows) >= 2:
+        first = cleaned_rows[0]
+        non_empty = [cell for cell in first if cell]
+        if len(non_empty) == 1 and len(non_empty[0]) >= 12:
+            cleaned_rows = cleaned_rows[1:]
+            continue
+        break
+    if not cleaned_rows:
+        return ""
+
     column_count = max(len(row) for row in cleaned_rows)
     normalized_rows: list[list[str]] = []
     for row in cleaned_rows:
@@ -475,22 +517,33 @@ def table_to_html(rows: list[list[str | None]]) -> str:
     return "".join(parts)
 
 
-def extract_tables(plumber_page: pdfplumber.page.Page) -> tuple[list[tuple[tuple[float, float, float, float], str]], bool]:
-    tables: list[tuple[tuple[float, float, float, float], str]] = []
+def extract_tables(page: fitz.Page) -> tuple[list[PageObject], list[tuple[float, float, float, float]], bool]:
+    tables: list[PageObject] = []
+    table_bboxes: list[tuple[float, float, float, float]] = []
     requires_facsimile = False
-    for table in plumber_page.find_tables():
+    try:
+        with redirect_stdout(io.StringIO()):
+            table_finder = page.find_tables()
+    except Exception:
+        return [], [], False
+
+    page_area = page.rect.width * page.rect.height
+    for table in table_finder.tables:
         rows = table.extract()
         metrics = table_metrics(rows)
         if not metrics:
             continue
+        bbox = tuple(table.bbox)
+        coverage = ((bbox[2] - bbox[0]) * (bbox[3] - bbox[1])) / page_area
         if table_should_render_as_html(metrics):
             html_fragment = table_to_html(rows)
             if html_fragment:
-                tables.append((table.bbox, html_fragment))
+                tables.append(PageObject(kind="table", top=bbox[1], value=html_fragment))
+                table_bboxes.append(bbox)
             continue
-        if table_should_force_facsimile(metrics):
+        if table_should_force_facsimile(metrics) and coverage >= 0.18:
             requires_facsimile = True
-    return tables, requires_facsimile
+    return tables, table_bboxes, requires_facsimile
 
 
 def extract_repeated_edge_keys(doc: fitz.Document) -> tuple[set[str], set[str]]:
@@ -508,7 +561,7 @@ def extract_repeated_edge_keys(doc: fitz.Document) -> tuple[set[str], set[str]]:
             if block["type"] != 0:
                 continue
             for line in block["lines"]:
-                text = normalize_text("".join(span["text"] for span in line["spans"]))
+                text = normalize_text(spans_to_text(line["spans"]))
                 if not text:
                     continue
                 key = edge_text_key(text)
@@ -542,7 +595,7 @@ def extract_sequential_margin_numbers(doc: fitz.Document) -> dict[int, set[str]]
             if block["type"] != 0:
                 continue
             for line in block["lines"]:
-                text = normalize_text("".join(span["text"] for span in line["spans"]))
+                text = normalize_text(spans_to_text(line["spans"]))
                 bbox = tuple(line["bbox"])
                 side = margin_side(bbox, page_width)
                 if not side or not is_margin_number_candidate(text, bbox, page_width):
@@ -597,7 +650,7 @@ def extract_text_lines(
             bbox = tuple(line["bbox"])
             if any(bbox_within(bbox, table_bbox) for table_bbox in table_bboxes):
                 continue
-            text = normalize_text("".join(span["text"] for span in spans))
+            text = normalize_text(spans_to_text(spans))
             if is_noise_line(text, bbox, page_num, page_count, page_height):
                 continue
             if (
@@ -611,6 +664,8 @@ def extract_text_lines(
             if bbox[1] >= page_height * (1 - EDGE_BAND_RATIO) and key in repeated_bottom_keys:
                 continue
             font_size = max(span["size"] for span in spans)
+            if is_small_metadata_line(text, bbox, font_size, page_width):
+                continue
             bold = any("bold" in span["font"].lower() or "black" in span["font"].lower() for span in spans)
             lines.append(TextLine(text=text, bbox=bbox, font_size=font_size, bold=bold))
     return lines
@@ -685,6 +740,101 @@ def merge_spelled_heading_fragments(lines: list[TextLine], page_width: float) ->
     return merged
 
 
+def merge_inline_line_fragments(lines: list[TextLine], page_width: float) -> list[TextLine]:
+    if not lines:
+        return []
+
+    merged: list[TextLine] = []
+    for line in sorted(lines, key=lambda item: (round(((item.y0 + item.y1) / 2) / 4), item.x0, item.y0)):
+        if merged:
+            previous = merged[-1]
+            same_row = (
+                abs(line.y0 - previous.y0) <= max(previous.font_size, line.font_size) * 0.35
+                and abs(line.y1 - previous.y1) <= max(previous.font_size, line.font_size) * 0.45
+            )
+            gap = line.x0 - previous.x1
+            max_gap = min(page_width * 0.18, max(previous.font_size, line.font_size) * 7.5)
+            if same_row and -1.5 <= gap <= max_gap:
+                previous.text = join_text(previous.text, line.text)
+                previous.bbox = (
+                    min(previous.x0, line.x0),
+                    min(previous.y0, line.y0),
+                    max(previous.x1, line.x1),
+                    max(previous.y1, line.y1),
+                )
+                previous.font_size = max(previous.font_size, line.font_size)
+                previous.bold = previous.bold or line.bold
+                continue
+        merged.append(TextLine(text=line.text, bbox=line.bbox, font_size=line.font_size, bold=line.bold))
+    return merged
+
+
+def page_is_toc(lines: list[TextLine]) -> bool:
+    if not lines:
+        return False
+
+    title_present = any(TOC_TITLE_RE.fullmatch(line.text) for line in lines[:6])
+    entry_count = sum(1 for line in lines if TOC_ENTRY_RE.match(line.text))
+    dot_leader_count = sum(1 for line in lines if TOC_DOT_LEADER_RE.match(line.text))
+    short_ratio = sum(1 for line in lines if len(line.text) <= 90) / len(lines)
+    return (title_present and (entry_count >= 4 or dot_leader_count >= 2)) or (entry_count + dot_leader_count >= 8 and short_ratio >= 0.55)
+
+
+def page_has_complex_layout(lines: list[TextLine], page_num: int) -> bool:
+    if not lines or page_num > 3:
+        return False
+
+    short_ratio = sum(1 for line in lines if len(line.text) <= 110) / len(lines)
+    has_present = any("present:" in line.text.lower() for line in lines)
+    special_layout_hits = sum(
+        1
+        for line in lines
+        if re.search(r"\b(present:|coram:|hon'?ble|through:|via video conferencing)\b", line.text, re.I)
+    )
+    keyword_hits = sum(
+        1
+        for line in lines
+        if re.search(
+            r"\b(through|versus|appellant|respondent|petitioner|plaintiff|defendant|decree holder|judgment pronounced on|date of decision|reserved on|pronounced on)\b",
+            line.text,
+            re.I,
+        )
+    )
+    x_clusters = {round(line.x0 / 36) for line in lines if len(line.text) <= 120}
+    if has_present and page_num <= 2 and short_ratio >= 0.35:
+        return True
+    if special_layout_hits >= 1 and short_ratio >= 0.45 and len(x_clusters) >= 2:
+        return True
+    return short_ratio >= 0.55 and keyword_hits >= 4 and len(x_clusters) >= 3
+
+
+def is_footnote_line(line: TextLine, median_font: float, page_height: float) -> bool:
+    if line.y0 < page_height * FOOTNOTE_REGION_START:
+        return False
+    if line.font_size > median_font * FOOTNOTE_FONT_RATIO:
+        return False
+    return bool(re.match(r"^(?:\(?\d{1,3}\)?(?:[.)]|\s)|\d{1,3}[A-Za-z]|\w+\.)", line.text))
+
+
+def is_small_metadata_line(
+    text: str,
+    bbox: tuple[float, float, float, float],
+    font_size: float,
+    page_width: float,
+) -> bool:
+    if font_size > 6.5:
+        return False
+    if bbox[0] > page_width * 0.28 and bbox[2] < page_width * 0.72:
+        return False
+    lowered = text.lower()
+    return bool(
+        "digitally signed" in lowered
+        or re.fullmatch(r"date:\s*[\d./:-]+(?:\s*[ap]m)?", lowered)
+        or re.fullmatch(r"\d{1,2}:\d{2}:\d{2}\s*[a-z]{2,4}", lowered)
+        or re.fullmatch(r"[a-z .'-]{3,40}", lowered)
+    )
+
+
 def save_image_bytes(image_bytes: bytes, extension: str, asset_root: Path, filename: str) -> str:
     asset_root.mkdir(parents=True, exist_ok=True)
     target = asset_root / f"{filename}.{extension}"
@@ -708,6 +858,7 @@ def render_page_facs(page: fitz.Page, asset_root: Path, slug: str) -> str:
 def extract_figures(page: fitz.Page, table_bboxes: Iterable[tuple[float, float, float, float]], asset_root: Path, slug: str) -> list[PageObject]:
     objects: list[PageObject] = []
     page_area = page.rect.width * page.rect.height
+    text_length = len(page.get_text().strip())
     raw = page.get_text("dict", sort=True)
     for block in raw["blocks"]:
         if block["type"] != 1:
@@ -716,6 +867,8 @@ def extract_figures(page: fitz.Page, table_bboxes: Iterable[tuple[float, float, 
         if any(bbox_within(bbox, table_bbox, tolerance=5.0) for table_bbox in table_bboxes):
             continue
         area = (bbox[2] - bbox[0]) * (bbox[3] - bbox[1])
+        if text_length >= PAGE_FACSIMILE_TEXT_THRESHOLD and area / page_area >= BACKGROUND_IMAGE_AREA_RATIO:
+            continue
         if area / page_area < INLINE_FIGURE_AREA_RATIO:
             continue
         rel = save_image_bytes(
@@ -768,12 +921,19 @@ def process_page(
     if page_is_facsimile(page) or page_has_complex_table(page):
         return [DocItem(kind="facsimile", page_num=page_num, html_fragment=render_page_facs(page, asset_root, slug))]
 
-    table_bboxes: list[tuple[float, float, float, float]] = []
+    table_objects, table_bboxes, table_requires_facsimile = extract_tables(page)
+    if table_requires_facsimile:
+        return [DocItem(kind="facsimile", page_num=page_num, html_fragment=render_page_facs(page, asset_root, slug))]
+
     lines = extract_text_lines(page, table_bboxes, repeated_top_keys, repeated_bottom_keys, sequential_margin_numbers)
+    lines = merge_inline_line_fragments(lines, page.rect.width)
     lines = merge_spelled_heading_fragments(lines, page.rect.width)
+    if page_is_toc(lines) or page_has_complex_layout(lines, page_num):
+        return [DocItem(kind="facsimile", page_num=page_num, html_fragment=render_page_facs(page, asset_root, slug))]
     median_font = median(line.font_size for line in lines) if lines else 11.0
 
     objects = page_objects_for_text(lines)
+    objects.extend(table_objects)
     objects.extend(extract_figures(page, table_bboxes, asset_root, slug))
     objects.sort(key=lambda obj: (obj.top, 0 if obj.kind == "line" else 1))
 
@@ -800,6 +960,16 @@ def process_page(
 
         line = obj.value
         assert isinstance(line, TextLine)
+
+        if is_footnote_line(line, median_font, page.rect.height):
+            if current and current.kind == "footnote" and should_continue_item(current, line, previous_line):
+                current.text = join_text(current.text or "", line.text)
+                previous_line = line
+                continue
+            flush()
+            current = DocItem(kind="footnote", page_num=page_num, text=line.text)
+            previous_line = line
+            continue
 
         if is_heading_line(line, median_font, page_width):
             flush()
@@ -896,6 +1066,11 @@ def render_body(items: list[DocItem]) -> str:
             parts.append(f'<p data-page="{item.page_num}">{format_inline_text(item.text or "")}</p>')
             continue
 
+        if item.kind == "footnote":
+            close_list()
+            parts.append(f'<p class="footnote" data-page="{item.page_num}">{format_inline_text(item.text or "")}</p>')
+            continue
+
         if item.kind == "table":
             close_list()
             parts.append(f'<div class="table-wrap" data-page="{item.page_num}">{item.html_fragment}</div>')
@@ -980,6 +1155,11 @@ def render_document(body_html: str) -> str:
     p {{
       margin: 0.65em 0;
       text-align: justify;
+    }}
+    .footnote {{
+      font-size: 0.9rem;
+      line-height: 1.45;
+      margin-top: 0.5em;
     }}
     ol, ul {{
       margin: 0.65em 0 0.95em 1.5em;
@@ -1083,11 +1263,42 @@ def convert_pdf(pdf_path: Path, doc_index: int, total_docs: int) -> tuple[str, s
         return pdf_path.name, html_path.relative_to(OUTPUT_DIR).as_posix(), len(doc)
 
 
+def collect_pdf_paths(inputs: list[str]) -> list[Path]:
+    if not inputs:
+        candidates = ROOT.rglob("*.pdf")
+    else:
+        paths: list[Path] = []
+        for raw in inputs:
+            path = Path(raw)
+            if not path.is_absolute():
+                path = (ROOT / path).resolve()
+            if path.is_dir():
+                paths.extend(path.rglob("*.pdf"))
+            elif path.is_file() and path.suffix.lower() == ".pdf":
+                paths.append(path)
+        candidates = paths
+
+    pdf_paths: list[Path] = []
+    seen: set[Path] = set()
+    for path in candidates:
+        resolved = path.resolve()
+        if OUTPUT_DIR in resolved.parents:
+            continue
+        if resolved not in seen:
+            pdf_paths.append(resolved)
+            seen.add(resolved)
+    return sorted(pdf_paths)
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Convert court PDFs to HTML.")
+    parser.add_argument("inputs", nargs="*", help="PDF files or directories to convert. Defaults to all PDFs under the workspace.")
+    args = parser.parse_args()
+
     if OUTPUT_DIR.exists():
         shutil.rmtree(OUTPUT_DIR)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    pdf_paths = sorted(ROOT.glob("*.pdf"))
+    pdf_paths = collect_pdf_paths(args.inputs)
     if not pdf_paths:
         raise SystemExit("No PDF files found.")
 
